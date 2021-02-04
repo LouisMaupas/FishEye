@@ -1,0 +1,40 @@
+
+.link {
+    height: 22px;
+    box-sizing: border-box;
+    border-radius: 11px;
+    border: 0.5px solid $color-link-border;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15.62px;
+    text-align: center;
+    color: $color-primary;
+    cursor: pointer;
+    padding: 0.1em 0.5em 0.1em;
+    &:hover{
+        background-color: $color-primary;
+        color: white;
+    }
+}
+
+.invisible-link {
+    visibility: hidden;
+    box-sizing: border-box;
+    background-color: $color-secondary-lighter;
+    line-height: 23px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: black;
+    &:focus {
+        visibility: visible;
+    }
+    &:hover {
+        visibility: visible;
+    }
+}

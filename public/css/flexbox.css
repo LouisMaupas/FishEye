@@ -1,0 +1,88 @@
+.df {
+    display: flex;
+}
+
+.jc-fe {
+    justify-content: flex-end;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.jc-se {
+    justify-content: space-evenly;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-s {
+    justify-content: start;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.fd-r {
+    flex-direction: row;
+}
+
+.fd-rr {
+    flex-direction: row-reverse;
+}
+
+.fd-c {
+    flex-direction: column;
+}
+
+.fd-cr {
+    flex-direction: column-reverse;
+}
+
+.ta-c {
+	text-align: center;
+}
+
+.ta-j {
+	text-align: justify;
+}
+
+.ac-fe {
+    align-content: flex-end;
+}
+
+.ac-c {
+    align-content: center;
+}
+
+.ac-fs {
+    align-content: flex-start;
+   }
+
+.as-s {
+    align-self: flex-start;
+} 
+
+.as-c {
+    align-self: center;
+}
+
+.as-e {
+    align-self: flex-end;
+}
+
+.as-s {
+    align-self: stretch;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+
+.fw-w {
+    flex-wrap: wrap;
+}

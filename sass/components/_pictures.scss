@@ -1,0 +1,8 @@
+.picture {
+    &--profil{
+        height: 300px;
+        width: auto;
+        border-radius: 50%;
+        clip-path: circle(40%);
+    }
+}

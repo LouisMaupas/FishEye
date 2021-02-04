@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./public/css/flexbox.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>FishEye - Accueil</title>
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="invisible-link">Passer au contenu</a>
+        <header>
+            <a aria-current=”page” href="index.html">
+                <img role=”banner” src="./public/img/logo/logo.png" alt="Fisheye Home page">
+            </a>
+            <nav role="search">
+                <ul><!--“Tag” (span uniquement pour screen readers pour chaque tag)-->
+                    <li id="portrait" class="link"><a href="#">#Portrait</a></li>
+                    <li id="art" class="link"><a href="#">#Art</a></li>
+                    <li id="fashion" class="link"><a href="#">#Fashion</a></li>
+                    <li id="architecture" class="link"><a href="#">#Architecture</a></li>
+                    <li id="travel" class="link"><a href="#">#Travel</a></li>
+                    <li id="sport" class="link"><a href="#">#Sport</a></li>
+                    <li id="animals" class="link"><a href="#">#Animals</a></li>
+                    <li id="events" class="link"><a href="#">#Events</a></li>
+                </ul>
+            </nav>
+            <h1>Nos photographes</h1>
+        </header>
+        <main class="main"><!--OU <section>-->
+            <article id="article-one" class="grid-item">
+                <a href="./html/photo.html">
+                    <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MimiKeel.jpg" alt="">
+                    <h2>Mimi Keel</h2>
+                </a>
+                    <span class="paragraphe-title">London, UK</span><br/>
+                    Voir le beau dans le quotidien<br/>
+                    <span class="paragraphe-price">400€/jour</span>
+                <div >
+                    <a href="#"><span class="link">#portrait</span></a>
+                    <a href="#"><span class="link">#events</span></a>
+                    <a href="#"><span class="link">#travel</span></a>
+                    <a href="#"><span class="link">#animals</span></a>
+                </div>
+            </article>
+            <article id="article-two" class="grid-item">
+                <a href="#">
+                     <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
+                    <h2>Ellie-Rose Wilkens</h2>
+                </a>
+                <p>
+                    <span class="paragraphe-title">Paris, France</span><br/>
+                    Travaille sur des compositions complexes<br/>
+                    <span class="paragraphe-price">250€/jour</span>
+                    
+                </p>
+                <div class="CHANGER LE BALISE TAG" >
+                    <span class="link">#sport</span>
+                    <span class="link">#architecture</span>
+                </div>
+            </article>
+            <article id="article-three" class="grid-item">
+                <a href="#">
+                    <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/TracyGalindo.jpg" alt="">
+                    <h2>Tracy Galindo</h2>
+                </a>
+                <p>
+                    <span class="paragraphe-title">Montreal, Canada</span><br/>
+                    Photographe freelance<br/>
+                    <span class="paragraphe-price">500€/jour</span>
+                    
+                </p>
+                <div class="CHANGER LE BALISE TAG" >
+                    <span class="link">#art</span>
+                    <span class="link">#fashion</span>
+                    <span class="link">#events</span>
+                </div>
+            </article>
+            <article id="article-four" class="grid-item">
+                <a href="#">
+                    <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/NabeelBrandford.jpg" alt="">
+                    <h2>Nabeel Bradford</h2>
+                </a>
+                <p>
+                    <span class="paragraphe-title">Mexico City, Mexico</span><br/>
+                    Je vais toujours de l’avant<br/>
+                    <span class="paragraphe-price">350€/jour</span>
+                    
+                </p>
+                <div class="CHANGER LE BALISE TAG" >
+                    <span class="link">#travel</span>
+                    <span class="link">#portrait</span>
+                </div>
+            </article>
+            <article id="article-five" class="grid-item">
+                <a href="#">
+                    <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/RhodeDubois.jpg" alt="">
+                    <h2>Rhode Dubois</h2>
+                </a>
+                <p>
+                    <span class="paragraphe-title">Barcelona, Spain</span><br/>
+                    Créatrice de souvenis<br/>
+                    <span class="paragraphe-price">375€/jour</span>
+                    
+                </p>
+                <div class="CHANGER LE BALISE TAG" >
+                    <span class="link">#sport</span>
+                    <span class="link">#fashion</span>
+                    <span class="link">#events</span>
+                    <span class="link">#animals</span>
+                </div>
+            </article>
+            <article id="article-six" class="grid-item">
+                <a href="#">
+                    <img class="picture--profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MarcelNikolic.jpg" alt="">
+                    <h2>Marcel Nikolic</h2>
+                </a>
+                <p>
+                    <span class="paragraphe-title">Berlin, Germany</span><br/>
+                    Toujours à la recherche de LA photo<br/>
+                    <span class="paragraphe-price">300€/jour</span>
+                    
+                </p>
+                <div class="CHANGER LE BALISE TAG" >
+                    <span class="link">#events</span>
+                    <span class="link">#architecture</span>
+                </div>
+            </article>
+        </main>
+    </div>
+    <script src="scripts/scripts.js" ></script>
+</body>
+</html>

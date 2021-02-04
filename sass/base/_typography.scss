@@ -1,0 +1,38 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 47px;
+}
+
+h1 {
+    color: $color-primary;
+}
+
+h2 {
+    color: $color-secondary;
+}
+
+p {
+    font-size: 10px;
+    line-height: 13px;
+    color: black;
+    & > .paragraphe-title {
+        color: $color-primary;
+        font-size: 13px;
+        line-height: 17px;
+    }
+    & > .paragraphe-price {
+        color: $color-typo-price;
+        font-size: 9px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+

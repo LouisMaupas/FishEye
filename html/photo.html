@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../public/css/flexbox.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <title>FishEye - PHOTOGRAPHE</title>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html">
+            <img src="../public/img/logo/logo.png" alt="">
+        </a>
+        <div>
+            <header>
+                    <h1>Mimi Keel</h1>
+            </header>
+            <span class="paragraphe-title">London, UK</span><br/>
+            Voir le beau dans le quotidien<br/>
+            <span class="paragraphe-price">400€/jour</span>
+            <div >
+                <a href="#"><span class="link">#portrait</span></a>
+                <a href="#"><span class="link">#events</span></a>
+                <a href="#"><span class="link">#travel</span></a>
+                <a href="#"><span class="link">#animals</span></a>
+            </div>
+            <div class="définir vos liens comme des blocs HTML"><!--TODO-->
+                <button class="button--static">
+                    Contactez-moi
+                </button>
+            </div>
+            <div>
+                <!--<img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">-->
+            </div>   
+        </div>
+        <!-- ACCESSIBILITé MODAL
+    liste complète des éléments à prendre en compte lors de la création d’une modale :
+-	Il est important de masquer le reste de la page HTML aux technologies d'assistance. Il vous faudra ajouter un attribut  aria-hidden
+-	Vous devez ajouter un attribut rôle à votre modale (  role=”dialog” ) ;
+-	Vous devez être mesure de fermer la modale avec la touche “échap” ;
+-	Il est important de mettre le focus sur votre modale une fois cette dernière ouverte ;
+-	Il est important de cacher la modale quand cette dernière n’est pas ouverte.
+        -->
+        <div class="modal content">
+            <span class="close"></span>
+            <div class="modal-body">
+                <form 
+                id=""
+                name=""
+                action=""
+                method=""
+                >
+                    <div class="formData">
+                        <label for="first" >Prénom</label><br>
+                        <input
+                        class="text-control"
+                        type="text"
+                        id="first"
+                        name="first"
+                        minlength="2"
+                        required 
+                        /><br>
+                    </div>
+                    <div class="formData">
+                        <label for=last">Nom</label><br>
+                        <input
+                          class="text-control"
+                          type="text"
+                          id="last"
+                          name="last"
+                          required
+                        /><br>
+                    </div>
+                    <div class="formData">
+                        <label for="email">E-mail</label><br>
+                        <input
+                          class="text-control"
+                          type="text"
+                          id="email"
+                          name="email"
+                          required 
+                        /><br>
+                    </div>
+                    <div class="formData">
+                        <label for="text">message</label><br>
+                        <input
+                          class="text-control"
+                          type="text"
+                          id="text"
+                          name="text"
+                          required 
+                        /><br>
+                      </div>
+                </form>
+            </div>
+        </div>
+        <div class="pictures main">
+            <figure class="grid-item">
+                <a href="#">
+                    <img src="#" alt="">
+                </a>
+                <figcaption>
+                    <span class="pictures__title">Arc-en-ciel</span><br/>
+                    <span class="price">70€</span> 
+                    <span class="like"><i class="fas fa-heart"></i></span>
+                </figcaption>
+            </figure>
+            <figure class="grid-item">
+                <a href="#">
+                    <img src="#" alt="">
+                </a>
+                <figcaption>
+                    <span class="pictures__title">Arc-en-ciel</span><br/>
+                    <span class="price">70€</span> 
+                    <span class="like"><i class="fas fa-heart"></i></span>
+                </figcaption>
+            </figure>
+        </div>    
+    </div> 
+</body>
+</html>

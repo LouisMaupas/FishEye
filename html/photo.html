@@ -15,29 +15,35 @@
         <a href="../index.html">
             <img src="../public/img/logo/logo.png" alt="">
         </a>
-        <div>
-            <header>
+        <div class="df fd-r jc-se">
+            <div class="artist-infos" >
+                <header>
                     <h1>Mimi Keel</h1>
-            </header>
-            <span class="paragraphe-title">London, UK</span><br/>
-            Voir le beau dans le quotidien<br/>
-            <span class="paragraphe-price">400€/jour</span>
-            <div >
-                <a href="#"><span class="link">#portrait</span></a>
-                <a href="#"><span class="link">#events</span></a>
-                <a href="#"><span class="link">#travel</span></a>
-                <a href="#"><span class="link">#animals</span></a>
+                </header>
+                <span class="paragraphe-title">London, UK</span><br/>
+                Voir le beau dans le quotidien<br/>
+                <span class="paragraphe-price">400€/jour</span>
+                <div >
+                    <a href="#"><span class="link">#portrait</span></a>
+                    <a href="#"><span class="link">#events</span></a>
+                    <a href="#"><span class="link">#travel</span></a>
+                    <a href="#"><span class="link">#animals</span></a>
+                </div>
             </div>
-            <div class="définir vos liens comme des blocs HTML"><!--TODO-->
+            <div><!--TODO définir vos liens comme des blocs HTML-->
                 <button class="button--static">
                     Contactez-moi
                 </button>
             </div>
             <div>
-                <!--<img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">-->
+                <img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
             </div>   
         </div>
-        <!-- ACCESSIBILITé MODAL
+
+
+
+        <!--MODALE PAGE START-->
+                <!-- ACCESSIBILITé MODAL
     liste complète des éléments à prendre en compte lors de la création d’une modale :
 -	Il est important de masquer le reste de la page HTML aux technologies d'assistance. Il vous faudra ajouter un attribut  aria-hidden
 -	Vous devez ajouter un attribut rôle à votre modale (  role=”dialog” ) ;
@@ -98,18 +104,27 @@
                 </form>
             </div>
         </div>
+        <!--MODALE PAGE END-->
+
+
+
+
         <div class="pictures main">
 
-            <div id="divLibre">
-                C'est la 
-            </div>
+            <label for="tri">Trier par</label>
+            <!--<input type="text" name="tri" id="tri" />-->
+            <select name="" size="" multiple="multiple">
+                <option value="option1">Popularité</option>
+                <option value="option2">Date</option>
+                <option value="Option3">Titre</option>
+            </select>
 
-
-            <figure class="grid-item">
+            <figure>
                 <a href="#">
-                    <img src="#" alt="photo 1" id="photographerOne">
+                    <img src="#" alt="photo 1" id="photographerOne"/>
+                    <span id="divLibre"> C'est la </span>
                 </a>
-                <figcaption>
+                <figcaption class="df fd-r jc-se">
                     <span class="pictures__title">Arc-en-ciel</span><br/>
                     <span class="price">70€</span> 
                     <span class="like"><i class="fas fa-heart"></i></span>
@@ -118,20 +133,24 @@
 
 
 
-            <figure class="grid-item">
+            <figure>
                 <a href="#">
                     <img src="#" alt="photo 2">
                 </a>
-                <figcaption>
+                <figcaption class="df fd-r jc-se">
                     <span class="pictures__title">Arc-en-ciel</span><br/>
                     <span class="price">70€</span> 
                     <span class="like"><i class="fas fa-heart"></i></span>
                 </figcaption>
             </figure>
-
-
-            
         </div>    
+
+        <div class="tarif">
+            297081
+            <span class="like"><i class="fas fa-heart"></i></span>
+            300€/jour
+        </div>
+
     </div> 
     <script src="../scripts/scripts.js" ></script>
 </body>

@@ -16,8 +16,8 @@ header {
         list-style-type: none;
         text-align: center;
         & > li {
+            display: inline; 
             & > a {
-                display: inline; 
                 color: $color-primary;
             }
             &:hover > a {
@@ -27,12 +27,22 @@ header {
     }
 }
 
+ /* GRID */
 .main {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     gap: 5em;
 }
+
+
+/* FLEX
+.main {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+*/
 
 .display-block {
     display: block;

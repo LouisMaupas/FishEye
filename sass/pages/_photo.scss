@@ -1,3 +1,7 @@
+.photo-container{
+    margin: 2em 3em;
+}
+
 .tarif {
     background-color: $color-secondary;
     font-weight: 500;
@@ -7,4 +11,9 @@
     width: 376px;
     height: 89px;
     border-radius: 5px;
+}
+
+.header {
+    background-color: $color-third;
+    border: 1px solid black;
 }

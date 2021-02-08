@@ -27,26 +27,41 @@ portrait.addEventListener('click', function () {
 })
 */
 
-fetch('http://127.0.0.1:5500/datas.json')
-// 1er promesse on recupere la reponse
-  .then(res => {
-    // S'il y a un soucis ...
-    if (!res.ok) {
-      throw new Error('HTTP error' + Response.status)
-    }
-    // Si tout va bien on jsonifie la réponse
-    return res.json()
+// on fait une requete
+const myPromise = fetch('http://127.0.0.1:5500/datas.json')
+// on recupere la reponse et la retourne au format JSON
+const MyPromiseOk = myPromise.then(res => {
+  // S'il y a un soucis ...
+  if (!res.ok) { // HTTP-status is not 200-299
+    throw new Error('HTTP error' + Response.status)
   }
-  )
-  // 2nd promesse
-  .then(data => {
-    console.log(data.photographers[0])
-    const eulData = data.photographers[1]
-    console.log(eulData)
-    let maVariable = document.getElementById('divLibre');
-    maVariable.innerText = eulData
-  }
-  )
+  // Si tout va bien on parse la réponse
+  return res.json()
+}
+)
+// chainage : 2nd promesse sur la 1er promesse jsonifié qu'on stock dans "MyPromiseResult"
+const MyPromiseResult = MyPromiseOk.then(data => {
+  const result = data
+  console.log(result)
+  const media = data.media
+  console.log(media)
+  const photographers = data.photographers
+  console.log(photographers)
+  const photographerZero = data.photographers[0]
+  console.log(photographerZero)
+  const city = photographerZero.city
+  console.log(city)
+  const country = photographerZero.country
+  const id = photographerZero.id
+  const name = photographerZero.name
+  const portrait = photographerZero.portrait
+  const price = photographerZero.price
+  const tagline = photographerZero.tagline
+  const tags = photographerZero.tags
+  const maVariable = document.getElementById('divLibre')
+  maVariable.innerText = JSON.stringify(photographerZero) + 'Et la ville est ' + city
+}
+)
   // si la promesse est rejetée
   .catch(function () {
     this.dataError = true
@@ -62,27 +77,6 @@ let photographerFour
 let photographerFive
 let photographerSix
 */
-/*
-fetch('http://127.0.0.1:5500/datas.json')
-  .then(response => response.json())
-  .then(data => console.log((data.photographers[0])))
-*/
-/*
-fetch('http://127.0.0.1:5500/datas.json')
-  .then(response => response.json())
-  .then(data => console.log(data.photographers[1]))
-*/
-
-/*
-function recup () {
-  fetch('http://127.0.0.1:5500/datas.json')
-    .then(response => response.json())
-    .then(data => {
-      maVariable.innerHTML = data.photographers[1]
-    })
-}
-recup()
-*/
 
 /*
 function creatPhotographe (name, id, city, country, tags, price, portrait, tagline) {
@@ -97,27 +91,4 @@ function creatPhotographe (name, id, city, country, tags, price, portrait, tagli
   objet.tagline = tagline
   return objet
 }
-*/
-
-/*
-let test = creatPhotographe(photographerOne)
-console.log('HEY YO' + test + 'HEY')
-*/
-/*
-let maVariable = document.getElementById('divLibre');
-const getData = async function () {
-  try {
-    const response = await fetch('http://127.0.0.1:5500/datas.json')
-    if (response.ok) {
-      const data = response.json()
-      console.log(data)
-      maVariable.innerHTML = data
-    } else {
-      console.error('Le serveur indiuque : ', response.status)
-    }
-  } catch (e) {
-    console.log(e)
-  }
-}
-getData()
 */

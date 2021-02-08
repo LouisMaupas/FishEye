@@ -12,30 +12,35 @@
 </head>
 <body>
     <div class="photo-container">
-        <a href="../index.html">
-            <img src="../public/img/logo/logo.png" alt="">
-        </a>
-        <div class="header df fd-r jc-se">
-            <div class="artist-infos" >
-                <h1>Mimi Keel</h1>
-                <span class="paragraphe-title">London, UK</span><br/>
-                Voir le beau dans le quotidien<br/>
-                <span class="paragraphe-price">400€/jour</span>
-                <div >
-                    <a href="#"><span class="link">#portrait</span></a>
-                    <a href="#"><span class="link">#events</span></a>
-                    <a href="#"><span class="link">#travel</span></a>
-                    <a href="#"><span class="link">#animals</span></a>
+        <header>
+            <a href="../index.html">
+                <img src="../public/img/logo/logo.png" alt="">
+            </a>
+        </header>
+        <div class="header artist-infos df fd-r jc-sb">
+            <div class="df fd-r">
+                <div class="artist-infos__details">
+                    <h1>Mimi Keel</h1>
+                    <span class="artist-infos__details__title">London, UK</span><br/>
+                    <span class="artist-infos__details__txt">Voir le beau dans le quotidien</span><br/>
+                    <nav>
+                        <a href="#"><span class="link">#portrait</span></a>
+                        <a href="#"><span class="link">#events</span></a>
+                        <a href="#"><span class="link">#travel</span></a>
+                        <a href="#"><span class="link">#animals</span></a>
+                    </nav>
+                </div>
+                <div class="artist-infos__btn">
+                    <button class="button--static">
+                        Contactez-moi
+                    </button>
                 </div>
             </div>
-            <div><!--TODO définir vos liens comme des blocs HTML-->
-                <button class="button--static">
-                    Contactez-moi
-                </button>
-            </div>
             <div>
-                <img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
-            </div>   
+                <div class="artist-infos__pic">
+                    <img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
+                </div> 
+            </div>
         </div>
         <!--MODALE PAGE START-->
                 <!-- ACCESSIBILITé MODAL
@@ -100,40 +105,99 @@
             </div>
         </div>
         <!--MODALE PAGE END-->
-        <div class="pictures main">
-
-            <label for="tri">Trier par</label>
-            <!--<input type="text" name="tri" id="tri" />-->
-            <select name="" size="" multiple="multiple">
+        <div class="artist-pictures">
+            <label for="tri" id="tri">Trier par</label>
+            <select id="tri" name="tri" size="" multiple="multiple">
                 <option value="option1">Popularité</option>
                 <option value="option2">Date</option>
                 <option value="Option3">Titre</option>
             </select>
-
-            <figure>
-                <a style="text-decoration: none; color: black;" href="#">
-                    <img src="#" alt="photo 1" id="photographerOne"/>
-                    <span id="divLibre"> C'est la </span>
-                </a>
-                <figcaption class="df fd-r jc-se">
-                    <span class="pictures__title">Arc-en-ciel</span><br/>
-                    <span class="price">70€</span> 
-                    <span class="like"><i class="fas fa-heart"></i></span>
-                </figcaption>
-            </figure>
-
-
-
-            <figure>
-                <a href="#">
-                    <img src="#" alt="photo 2">
-                </a>
-                <figcaption class="df fd-r jc-se">
-                    <span class="pictures__title">Arc-en-ciel</span><br/>
-                    <span class="price">70€</span> 
-                    <span class="like"><i class="fas fa-heart"></i></span>
-                </figcaption>
-            </figure>
+            <div class="artist-pictures__main df">
+                <figure>
+                    <a style="text-decoration: none; color: black;" href="#">
+                        <img src="#" alt="photo 1" id="photographerOne"/>
+                        <span id="divLibre"> C'est la </span>
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a href="#">
+                        <img src="#" alt="photo 2">
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a style="text-decoration: none; color: black;" href="#">
+                        <img src="#" alt="photo 1" id="photographerOne"/>
+                        <span id="divLibre"> C'est la </span>
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a href="#">
+                        <img src="#" alt="photo 2">
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a style="text-decoration: none; color: black;" href="#">
+                        <img src="#" alt="photo 1" id="photographerOne"/>
+                        <span id="divLibre"> C'est la </span>
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a href="#">
+                        <img src="#" alt="photo 2">
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a style="text-decoration: none; color: black;" href="#">
+                        <img src="#" alt="photo 1" id="photographerOne"/>
+                        <span id="divLibre"> C'est la </span>
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <a href="#">
+                        <img src="#" alt="photo 2">
+                    </a>
+                    <figcaption class="df fd-r jc-se">
+                        <span class="pictures__title">Arc-en-ciel</span><br/>
+                        <span class="price">70€</span> 
+                        <span class="like"><i class="fas fa-heart"></i></span>
+                    </figcaption>
+                </figure>
+            </div>    
         </div>    
 
         <div class="tarif">
@@ -144,5 +208,6 @@
 
     </div> 
     <script src="../scripts/scripts.js" ></script>
+    <script src="../scripts/scriptsTwo.js" ></script>
 </body>
 </html>

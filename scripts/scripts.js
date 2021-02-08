@@ -1,45 +1,22 @@
 // Toute la gestion des événements (par exemple, les clics et les pressions au clavier)
 // doit être configurée (utilisez KeyboardEvent.key ou KeyboardEvent.code.).
 
-/*
-const portrait = document.getElementById('portrait')
-const articleOne = document.getElementById('article-one')
-const tags = ['portrait', 'art', 'fashion', 'architecture', 'travel', 'sport', 'animals', 'events']
-const thubOne = ['portrait', 'travel', 'animals', 'events']
-const thubTwo = ['sport', 'architecture']
-const thubThree = ['art', 'fashion', 'events']
-const thubFour = ['portrait', 'travel']
-const thubFive = ['fashion', 'sport', 'animals', 'events']
-const thubSix = ['architecture', 'events'],
-    art = document.getElementById('art'),
-    fashion = document.getElementById("fashion"),
-    architecture = document.getElementById("architecture"),
-    travel = document.getElementById("travel"),
-    sport = document.getElementById("sport"),
-    animals = document.getElementById("animals"),
-    events = document.getElementById("events"),
-    articleOne = document.getElementById("article-one"),
-    articleTwo = document.getElementById("article-two");
-
-portrait.addEventListener('click', function () {
-  articleOne.style.display = 'none'
-  portrait.style.backgroundColor = "red"
-})
-*/
-
+/* ESSAIE #1
+const url = 'http://127.0.0.1:5500/datas.json'
 // on fait une requete
-const myPromise = fetch('http://127.0.0.1:5500/datas.json')
+const response = fetch(url)
 // on recupere la reponse et la retourne au format JSON
-const MyPromiseOk = myPromise.then(res => {
+const MyPromiseOk = response.then(res => {
   // S'il y a un soucis ...
   if (!res.ok) { // HTTP-status is not 200-299
     throw new Error('HTTP error' + Response.status)
   }
-  // Si tout va bien on parse la réponse
+  // Si tout va bien on parse en JSON la réponse contenu dans le body
   return res.json()
 }
 )
 // chainage : 2nd promesse sur la 1er promesse jsonifié qu'on stock dans "MyPromiseResult"
+
 const MyPromiseResult = MyPromiseOk.then(data => {
   const result = data
   console.log(result)
@@ -68,15 +45,138 @@ const MyPromiseResult = MyPromiseOk.then(data => {
   }
   )
 
-// const photographerOne = {}
-// let maVariable = document.getElementById('divLibre');
-/*
-const photographerTwo
-let photographerThree
-let photographerFour
-let photographerFive
-let photographerSix
+console.log(MyPromiseResult)
+
+const photographers = MyPromiseOk.then(data => {
+  return data.photographers
+})
+
+const getPhotographer(id) {
+  return photographers.find(i => i.id === id); 
+}
+console.log(photographers)
 */
+
+/* ESSAIE #2 */
+const url = 'http://127.0.0.1:5500/datas.json'
+let photographers, pictures;
+// on fait une requete
+const response = fetch(url)
+// on recupere la reponse et la retourne au format JSON
+const getData = response.then(res => {
+  // S'il y a un soucis ...
+  if (!res.ok) { // HTTP-status is not 200-299
+    throw new Error('HTTP error' + Response.status)
+  }
+  // Si tout va bien on parse en JSON la réponse contenu dans le body
+  return res.json()
+}
+)
+
+getData.then(data => {
+    /*photographers = data.photographers;
+  	pictures = data.media;*/
+  	faireDesTrucs(data.media, data.photographers);
+})
+
+const getPhotographer = (id, photographers) => {
+    return photographers.find(i => i.id === id);
+}
+
+const getPicturesByPhotographer = (photographerId, pictures) => {
+    return pictures.filter(i => i.photographerId === photographerId);
+}
+
+function faireDesTrucs(pictures, photographers) {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AUTOMATISER TOUT CA
+let data = function (param) {
+  param.then(data => {
+    const result = data
+    return result
+  })
+}
+
+let photographers = function (data, int) {
+  return data.photographers + int
+}
+
+let media = function (data, int) {
+    return data.media + int
+  }
+
+let city = function (photographerInt) {
+    return photographerInt.city
+  }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 function creatPhotographe (name, id, city, country, tags, price, portrait, tagline) {

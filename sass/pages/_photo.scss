@@ -2,6 +2,48 @@
     margin: 2em 3em;
 }
 
+.header {
+    background-color: $color-third;
+    border: 1px solid black;
+}
+
+.artist-infos {
+    margin-top: 40px;
+    padding-top: 56px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+    &__details{
+        & > h1 {
+            font-size: 64px;
+            color: $color-secondary;
+        }
+        &__title {
+            color: $color-primary;
+            font-size: 24px;
+        }
+        &__txt {
+            color: $color-fourth;
+            font-size: 18px;
+        }
+        & nav a span {
+           font-size: 18px; 
+        }
+    }
+    &__btn{
+        margin-left: 1em;
+    }
+    &__pic{
+        margin-right: 1em;
+    }
+}
+
+.artist-pictures {
+    & #tri {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
 .tarif {
     background-color: $color-secondary;
     font-weight: 500;
@@ -11,9 +53,26 @@
     width: 376px;
     height: 89px;
     border-radius: 5px;
+    /*position*/
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
-.header {
-    background-color: $color-third;
-    border: 1px solid black;
+select {
+    background-color: $color-primary;
+    color: white;
+    height: auto;
+    width: 170px;
+    overflow: hidden;
+	text-overflow: ellipsis;
+    font-size: 18px;
+    padding-left: 1em;
+    & option {
+        &:hover {
+            background-color: $color-secondary;
+            color: #000000;;
+            cursor: pointer;
+        }
+    }
 }

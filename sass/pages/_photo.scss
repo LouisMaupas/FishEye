@@ -62,13 +62,23 @@
 select {
     background-color: $color-primary;
     color: white;
-    height: auto;
+    //height: 180px;
     width: 170px;
     overflow: hidden;
 	text-overflow: ellipsis;
+    border-radius: 5px;
     font-size: 18px;
     padding-left: 1em;
+    padding-right: 1em;
     & option {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        &:nth-child(1){
+            border-bottom: 2px solid white;
+        }
+        &:nth-child(2){
+            border-bottom: 2px solid white;
+        }
         &:hover {
             background-color: $color-secondary;
             color: #000000;;

@@ -59,7 +59,7 @@ console.log(photographers)
 
 /* ESSAIE #2 */
 const url = 'http://127.0.0.1:5500/datas.json'
-let photographers, pictures;
+let photographers, media;
 // on fait une requete
 const response = fetch(url)
 // on recupere la reponse et la retourne au format JSON
@@ -74,109 +74,22 @@ const getData = response.then(res => {
 )
 
 getData.then(data => {
-    /*photographers = data.photographers;
-  	pictures = data.media;*/
-  	faireDesTrucs(data.media, data.photographers);
+  /* photographers = data.photographers
+  media = data.media */
+  faireDesTrucs(data.media, data.photographers)
 })
 
 const getPhotographer = (id, photographers) => {
-    return photographers.find(i => i.id === id);
+  return photographers.find(i => i.id === id)
 }
 
 const getPicturesByPhotographer = (photographerId, pictures) => {
-    return pictures.filter(i => i.photographerId === photographerId);
+  return pictures.filter(i => i.photographerId === photographerId);
 }
 
-function faireDesTrucs(pictures, photographers) {
+function faireDesTrucs(media, photographers) {
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* AUTOMATISER TOUT CA
-let data = function (param) {
-  param.then(data => {
-    const result = data
-    return result
-  })
-}
-
-let photographers = function (data, int) {
-  return data.photographers + int
-}
-
-let media = function (data, int) {
-    return data.media + int
-  }
-
-let city = function (photographerInt) {
-    return photographerInt.city
-  }
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 function creatPhotographe (name, id, city, country, tags, price, portrait, tagline) {

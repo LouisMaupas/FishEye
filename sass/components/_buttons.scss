@@ -1,22 +1,26 @@
 .button {
+    background-color: $color-primary;
+    color: white;
+    font-style: normal;
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        color: black;
+        background-color: $color-secondary;
+    }
+    &:focus {
+        color: black;
+        background-color: $color-secondary;
     &--static {
-        background-color: $color-primary;
-        color: white;
-        font-style: normal;
-        line-height: 26px;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 1em;
-        border-radius: 5px;
-        cursor: pointer;
-        border: none;
-        &:hover{
-            color: black;
-            background-color: $color-secondary;
         }
-        &:focus {
-            color: black;
-            background-color: $color-secondary;
-        }
+    }
+    &--modal {
+        width: 170px;
+        height: 69px;
     }
 }

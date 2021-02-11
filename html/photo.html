@@ -31,9 +31,9 @@
                     </nav>
                 </div>
                 <div class="artist-infos__btn">
-                    <button class="button--static">
-                        Contactez-moi
+                    <button class="button button--static">
                     </button>
+                     <a href="#modal" class="modal-link">Ouvrir la boite modale</a>
                 </div>
             </div>
             <div>
@@ -51,59 +51,66 @@
 -	Il est important de mettre le focus sur votre modale une fois cette dernière ouverte ;
 -	Il est important de cacher la modale quand cette dernière n’est pas ouverte.
         -->
-        <div class="modal content">
-            <span class="close"></span>
-            <div class="modal-body">
-                <form 
-                id=""
-                name=""
-                action=""
-                method=""
-                >
-                    <div class="formData">
-                        <label for="first" >Prénom</label><br>
-                        <input
-                        class="text-control"
-                        type="text"
-                        id="first"
-                        name="first"
-                        minlength="2"
-                        required 
-                        /><br>
-                    </div>
-                    <div class="formData">
-                        <label for=last">Nom</label><br>
-                        <input
-                          class="text-control"
-                          type="text"
-                          id="last"
-                          name="last"
-                          required
-                        /><br>
-                    </div>
-                    <div class="formData">
-                        <label for="email">E-mail</label><br>
-                        <input
-                          class="text-control"
-                          type="text"
-                          id="email"
-                          name="email"
-                          required 
-                        /><br>
-                    </div>
-                    <div class="formData">
-                        <label for="text">message</label><br>
-                        <input
-                          class="text-control"
-                          type="text"
-                          id="text"
-                          name="text"
-                          required 
-                        /><br>
-                      </div>
-                </form>
+        <aside id="modal" class="modal content display-none" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal">
+            <div class="modal-wrapper js-modal-stop">
+                <div class="modal-header df jc-sb">
+                    <span>Contactez-moi</span>
+                    <div class="js-modal-close"><img  src="../public/img/logo/croix.png" />Fermer la boite modale</div>
+                </div>
+                <span class="modal-photographer">Mimi Keel</span>
+                <div class="modal-body">
+                    <form 
+                    id=""
+                    name=""
+                    action=""
+                    method=""
+                    >
+                        <div class="formData">
+                            <label for="first" >Prénom</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="first"
+                            name="first"
+                            minlength="2"
+                            required 
+                            /><br>
+                        </div>
+                        <div class="formData">
+                            <label for=last">Nom</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="last"
+                            name="last"
+                            required
+                            /><br>
+                        </div>
+                        <div class="formData">
+                            <label for="email">E-mail</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="email"
+                            name="email"
+                            required 
+                            /><br>
+                        </div>
+                        <div class="formData">
+                            <label for="text">Votre message</label><br>
+                            <input
+                            class="text-control"
+                            type="text"
+                            id="text"
+                            name="text"
+                            required 
+                            /><br>
+                        </div>
+                        <button class="button button--static" >Envoyer</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </aside>
         <!--MODALE PAGE END-->
         <div class="artist-pictures">
             <label for="tri" id="tri">Trier par</label>
@@ -207,6 +214,6 @@
         </div>
 
     </div> 
-    <script src="../scripts/bigbrouillon.js" ></script>
+    <script src="../scripts/modal.js"></script>
 </body>
 </html>

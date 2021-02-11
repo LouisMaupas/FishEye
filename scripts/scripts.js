@@ -2,8 +2,8 @@ const photographers = []
 
 // Factory.js
 
-// MediaFactory
-// PhotoFactory
+// MediaFactory ?
+// PhotoFactory ?
 
 const mimi = new Photographer(243)
 photographers.push(mimi)

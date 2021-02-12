@@ -4,7 +4,6 @@
 
 .header {
     background-color: $color-third;
-    border: 1px solid black;
 }
 
 .artist-infos {
@@ -42,6 +41,8 @@
         font-size: 18px;
         font-weight: bold;
     }
+    &__main {
+    } 
 }
 
 .tarif {

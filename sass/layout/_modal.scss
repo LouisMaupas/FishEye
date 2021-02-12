@@ -1,0 +1,69 @@
+ /* general aesthetic*/
+* {
+  box-sizing: border-box; 
+}
+
+/* aesthetics of the modal window*/
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  // 
+  & .modal-wrapper {
+    overflow: auto;
+    width: 669px;
+    height: 900px;
+    border-radius: 5px;
+    background-color: $color-secondary-lighter;
+    padding: 35px;
+    & .modal-header {
+      & span {
+        font-size: 64px;
+      }
+      & > div {
+        color: $color-secondary-lighter;
+        font-size: 0;
+        & img {
+        cursor: pointer;
+        }
+      }
+    }
+    & .modal-body {
+      /**/
+    }
+    & .modal-photographer {
+      font-size: 64px;
+    }
+  }
+}
+
+/* Form */
+.formData {
+  & label {
+    font-size: 36px;
+    display: inline-block;
+    color: $color-modal-label;
+  }
+  & input {
+    width: 599px;
+    height: 68px;
+    border-radius: 5px solid white;
+    font-size: 36px;
+  }
+}
+
+/* For animations */
+.display-none {
+  display: none;
+}
+
+
+
+
+

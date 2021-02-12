@@ -51,9 +51,24 @@ function Factory () {
 }
 
 // usine du modele des photographes
-const Photographer = function (id) {
-  let myPhotographerIs = id
-  this.data = 'data.photographer[myPhotographerIs]'
+const Photographers = function (id) {
+  let myId = id
+  const url = 'http://127.0.0.1:5501/datas.json'
+  const response = fetch(url)
+  const MyPromiseOk = response.then(res => {
+    if (!res.ok) {
+      throw new Error('HTTP error' + Response.status)
+    }
+    return res.json()
+  })
+  const MyPromiseResult = MyPromiseOk.then(data => {
+    const result = data
+    // const findIt = 'data.photographers[' + myId + ']'
+    console.log(result)
+    // this.data = findIt
+    this.data = data.photographers[243]
+    console.log(this.data)
+  })
 }
 
 // usine du modele des media
@@ -62,16 +77,23 @@ const Media = function () {
 }
 
 // stock de photographes
-const photographers = []
+const tableau = []
 
 // Usine de production
 function run (id) {
   const monId = id
   const factory = new Factory()
-  photographers.push(factory.createObject(monId))
-  return photographers
+  tableau.push(factory.createObject(monId))
+  return tableau
 }
 
 const mimi = 'media'
 run(mimi)
-console.log(photographers)
+console.log(tableau)
+
+const photo = 'photographer'
+run(photo)
+console.log()
+
+const test = new Photographers(243)
+console.log(test)

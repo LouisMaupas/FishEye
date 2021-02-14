@@ -36,14 +36,15 @@
 // console.log(PhotographerFactory.getData())
 
 // Usine generale
-function Factory () {
-  this.createObject = function (type) {
+function Factory (id) {
+  this.createObject = function (id) {
     let object
-    if (type === 'media') {
+    if (id > 10000) {
       object = new Media()
-    } else if (type === 'photographer') {
+    } else if (id < 10000) {
       object = new Photographers()
     } else {
+      console.log('erreur lors de la création de l\'objet')
       return alert('erreur lors de la création de l\'objet')
     }
     return object
@@ -51,24 +52,29 @@ function Factory () {
 }
 
 // usine du modele des photographes
-const Photographers = function (id) {
-  let myId = id
-  const url = 'http://127.0.0.1:5501/datas.json'
-  const response = fetch(url)
-  const MyPromiseOk = response.then(res => {
-    if (!res.ok) {
-      throw new Error('HTTP error' + Response.status)
+class Photographers {
+  constructor(id) {
+    const url = 'http://127.0.0.1:5501/datas.json'
+    const response = fetch(url)
+    const MyPromiseOk = response.then(res => {
+      if (!res.ok) {
+        throw new Error('HTTP error' + Response.status)
+      }
+      return res.json()
+    })
+    const MyPromiseResult = MyPromiseOk.then(data => {
+      const result = data
+      // const findIt = 'data.photographers[' + myId + ']'
+      console.log(result) // TODO LA CA MARCHE
+
+      // this.data = findIt
+      this.data = data.photographers[243]
+      console.log(this.data) //TODO MAIS PAS LA : Undefined
+    })
+    this.retouneMonId = function (id) {
+      console.log('mon id est ' + id)
     }
-    return res.json()
-  })
-  const MyPromiseResult = MyPromiseOk.then(data => {
-    const result = data
-    // const findIt = 'data.photographers[' + myId + ']'
-    console.log(result)
-    // this.data = findIt
-    this.data = data.photographers[243]
-    console.log(this.data)
-  })
+  }
 }
 
 // usine du modele des media
@@ -81,19 +87,21 @@ const tableau = []
 
 // Usine de production
 function run (id) {
-  const monId = id
-  const factory = new Factory()
-  tableau.push(factory.createObject(monId))
+  const factory = new Factory(id)
+  tableau.push(factory.createObject(id))
   return tableau
 }
 
-const mimi = 'media'
-run(mimi)
+const testMimi = 243
+run(testMimi)
 console.log(tableau)
 
-const photo = 'photographer'
-run(photo)
-console.log()
+// const testPhoto = 342550
+// run(testPhoto)
+// console.log()
 
-const test = new Photographers(243)
-console.log(test)
+// const mimi = new Photographers(243)
+// console.log(mimi)
+
+// voir request ???
+// https://developer.mozilla.org/fr/docs/Web/API/Request

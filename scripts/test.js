@@ -1,59 +1,23 @@
-// // dataHandler
-// const url = 'http://127.0.0.1:5501/datas.json'
-// const response = fetch(url)
-// const MyPromiseOk = response.then(res => {
-//   if (!res.ok) {
-//     throw new Error('HTTP error' + Response.status)
-//   }
-//   return res.json()
-// })
-// const myPromiseResult = MyPromiseOk.then(data => {
-//   const result = data
-//   console.log(result)
-// })
-
-// console.log(myPromiseResult) // promesse
-
-// class PhotographerFactory {
-//   constructor (apiURL) {
-//     this.apiURL = 'http://127.0.0.1:5501/datas.json'
-//     fetch(this.apiURL).then(res => {
-//       if (!res.ok) {
-//         throw new Error('HTTP error' + Response.status)
-//       }
-//       res.json().then(data => {
-//         this.data = data
-//       })
-//     }
-//     )
-//   }
-
-//   getData () {
-//     return this.data
-//   }
-// }
-
-// console.log(PhotographerFactory.getData())
-
 // Usine generale
-function Factory (id) {
-  this.createObject = function (id) {
-    let object
-    if (id > 10000) {
-      object = new Media()
-    } else if (id < 10000) {
-      object = new Photographers()
-    } else {
-      console.log('erreur lors de la création de l\'objet')
-      return alert('erreur lors de la création de l\'objet')
+class Factory {
+  constructor (id, type) {
+    this.createObject = function (id) {
+      let object
+      if (type === 'media') {
+        object = new Media(id)
+      } else if (type === 'photographers') {
+        object = new Photographers(id)
+      } else {
+        console.log('erreur lors de la création de l\'objet')
+      }
+      return object
     }
-    return object
   }
 }
 
 // usine du modele des photographes
 class Photographers {
-  constructor(id) {
+  constructor (id) {
     const url = 'http://127.0.0.1:5501/datas.json'
     const response = fetch(url)
     const MyPromiseOk = response.then(res => {
@@ -63,45 +27,98 @@ class Photographers {
       return res.json()
     })
     const MyPromiseResult = MyPromiseOk.then(data => {
-      const result = data
-      // const findIt = 'data.photographers[' + myId + ']'
-      console.log(result) // TODO LA CA MARCHE
-
-      // this.data = findIt
-      this.data = data.photographers[243]
-      console.log(this.data) //TODO MAIS PAS LA : Undefined
+      this.data = data.photographers[id]
     })
-    this.retouneMonId = function (id) {
-      console.log('mon id est ' + id)
-    }
   }
 }
 
 // usine du modele des media
-const Media = function () {
-  this.data = 'vla les datas du media'
+class Media {
+  constructor (id) {
+    const url = 'http://127.0.0.1:5501/datas.json'
+    const response = fetch(url)
+    const MyPromiseOk = response.then(res => {
+      if (!res.ok) {
+        throw new Error('HTTP error' + Response.status)
+      }
+      return res.json()
+    })
+    const MyPromiseResult = MyPromiseOk.then(data => {
+      this.data = data.media[id]
+    })
+  }
 }
 
-// stock de photographes
-const tableau = []
+// stock de photographes et des photos
+const tableauPhotographes = []
+const tableauMedia = []
 
-// Usine de production
-function run (id) {
-  const factory = new Factory(id)
-  tableau.push(factory.createObject(id))
-  return tableau
+// créateur de photographes
+function runPhotographer (id) {
+  const factory = new Factory(id, 'photographers')
+  tableauPhotographes.push(factory.createObject(id, 'photographers'))
+  return tableauPhotographes
 }
 
-const testMimi = 243
-run(testMimi)
-console.log(tableau)
+// créateur de media
+function runMedia (id) {
+  const factory = new Factory(id, 'media')
+  tableauMedia.push(factory.createObject(id, 'media'))
+  return tableauMedia
+}
 
-// const testPhoto = 342550
-// run(testPhoto)
-// console.log()
+// les photographes
+const mimi = 0
+const ellie = 1
+const tracy = 2
+const nabeel = 3
+const rhode = 4
+const marcel = 5
 
-// const mimi = new Photographers(243)
-// console.log(mimi)
+// création des photographes
+runPhotographer(mimi)
+runPhotographer(ellie)
+runPhotographer(tracy)
+runPhotographer(nabeel)
+runPhotographer(rhode)
+runPhotographer(marcel)
+
+console.log(tableauPhotographes)
+
+// les medias
+const one = 0
+const two = 1
+// [...]
+const sixty = 50
+
+// création des medias
+runMedia(one)
+runMedia(two)
+runMedia(sixty)
+
+console.log(tableauMedia)
+
 
 // voir request ???
 // https://developer.mozilla.org/fr/docs/Web/API/Request
+
+// pour assigner automatiquement
+// const nonAssingedphoto = {
+//   mimi: 0,
+//   ellie: 1,
+//   tracy: 2,
+//   nabeel: 3,
+//   rhode: 4,
+//   marcel: 5
+// }
+
+// let runAllPhotographers = function (a) {
+//   // for (let i; i <= a.length; i++) {
+//   //   a[i].push(tableauPhotographes)
+//   // }
+//   for (let key in a) {
+//     let value = a[key]
+//     console.log(key)
+//   }
+// }
+// runAllPhotographers(nonAssingedphoto)

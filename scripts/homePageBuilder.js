@@ -10,5 +10,7 @@
 // test.innerHTML = tableauPhotographes[0].data
 
 function homePagebuilder () {
-    
+    // 2 solutions
+    // ou je code tout en display none et je display block selon ce qui et choisi
+    // ou j'y genere selon ce qui est demandé
 }

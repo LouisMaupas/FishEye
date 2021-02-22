@@ -1,4 +1,5 @@
 .photo-container{
+    max-width: 1555px;
     margin: 2em 3em;
 }
 
@@ -42,6 +43,10 @@
         font-weight: bold;
     }
     &__main {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 350px);
+        gap: 50px;
     } 
 }
 
@@ -55,9 +60,11 @@
     height: 89px;
     border-radius: 5px;
     /*position*/
+    /*
     position: absolute;
     right: 0;
     bottom: 0;
+    */
 }
 
 select {

@@ -95,3 +95,47 @@ select {
     }
 }
 
+@media screen and (max-width: 700px) {
+    .photo-container{
+        width: auto;
+    }
+
+    .artist-infos {
+    margin: auto;
+    padding: 0;
+        &__details{
+            & > h1 {
+                font-size: 36px;
+                color: $color-secondary;
+            }
+            &__title {
+                color: $color-primary;
+                font-size: 13px;
+            }
+            &__txt {
+                color: $color-fourth;
+                font-size: 13px;
+            }
+            & nav a span {
+               font-size: 18px; 
+            }
+        }
+        &__btn{
+            margin-left: 1em;
+        }
+        &__pic{
+            margin-right: 1em;
+        }
+    }
+
+    .artist-pictures {
+        & #tri {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        &__main {
+            display: flex;
+            flex-direction: column;
+        } 
+    }
+}

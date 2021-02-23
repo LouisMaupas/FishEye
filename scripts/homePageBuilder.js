@@ -10,7 +10,22 @@
 // test.innerHTML = tableauPhotographes[0].data
 
 function homePagebuilder () {
-    // 2 solutions
-    // ou je code tout en display none et je display block selon ce qui et choisi
-    // ou j'y genere selon ce qui est demandé
+  const tags = document.querySelectorAll('.nav-link')
+  const photographers = document.querySelectorAll('article')
+  console.log(photographers)
+  for (let i = 0; i < tags.length; i++) {
+    tags[i].addEventListener('click', function (e) {
+      const tag = tags[i].id
+      console.log(tag)
+      for (let i = 0; i < photographers.length; i++) {
+        console.log(photographers[i])
+        if (photographers[i].classList.contains('.portrait')) {
+          console.log('oui')
+          photographers.classList.remove('display-none')
+        } else {
+          console.log('non')
+        }
+      }
+    })
+  }
 }

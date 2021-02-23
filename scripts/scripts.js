@@ -13,7 +13,7 @@ let medias = []
 
 // recup les datas du fichier JSON et quand la promesse est résolu y rend par une fonction
 function renderData () {
-  const url = 'http://127.0.0.1:5501/datas.json'
+  const url = 'http://127.0.0.1:5501//datas.json'
   fetch(url).then(res => {
     if (!res.ok) {
       throw new Error('HTTP error' + Response.status)

@@ -17,5 +17,5 @@ function media () {
   runAllMedia(nabeel)
   runAllMedia(rhode)
   runAllMedia(marcel)
-  console.log(medias)
+  // console.log(medias)
 }

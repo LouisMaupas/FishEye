@@ -23,6 +23,7 @@ function renderData () {
         photographer()
         media()
         homePagebuilder()
+        photoPagebuilder()
       })
     }
   })

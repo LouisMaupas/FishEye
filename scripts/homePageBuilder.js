@@ -10,7 +10,7 @@
 // test.innerHTML = tableauPhotographes[0].data
 
 function homePagebuilder () {
-  const tags = document.querySelectorAll('.nav-link')
+  let tags = document.querySelectorAll('.nav-link')
   const photographers = document.querySelectorAll('article')
   console.log(photographers)
   for (let i = 0; i < tags.length; i++) {
@@ -19,11 +19,17 @@ function homePagebuilder () {
       console.log(tag)
       for (let i = 0; i < photographers.length; i++) {
         console.log(photographers[i])
-        if (photographers[i].classList.contains('.portrait')) {
+        tags = tag.toString()
+        console.log(tags)
+        // if (photographers[i].classList.contains('portrait')) {
+        if (photographers[i].classList.contains('tags')) {
           console.log('oui')
-          photographers.classList.remove('display-none')
+          console.log(photographers[i].classList)
+          photographers[i].classList.remove('display-none')
         } else {
           console.log('non')
+          console.log(photographers[i].classList)
+         photographers.classList.add('display-none')
         }
       }
     })

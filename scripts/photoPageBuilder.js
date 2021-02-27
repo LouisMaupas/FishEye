@@ -28,3 +28,5 @@ function photoPagebuilder () {
 // voir : https://developer.mozilla.org/fr/docs/Web/API/URLSearchParams?toto=12
 
 // https://www.youtube.com/watch?v=li7Fmtk4RCo&t=164s&ab_channel=DevTheory
+
+//  ${}

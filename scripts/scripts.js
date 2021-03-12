@@ -29,7 +29,6 @@ function renderData () {
         media()
         homePagebuilder()
         photoPagebuilder()
-        console.log(photographers)
       })
     }
   })
@@ -39,3 +38,10 @@ renderData()
 function getDatas (data) {
   datas.push(data)
 }
+
+// TODO bouton like
+// TODO changer photo de profil / photographe
+// TODO changer tags span / photographe
+// TODO CAROUSSELLE DE PHOTOS
+// TODO inclusvité ARIA ...
+// TODO menu déroulant filter photos

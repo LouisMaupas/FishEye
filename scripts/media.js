@@ -1,5 +1,5 @@
 function media () {
-// enregistre / crée les photographes
+// groupe les media par id (de photographe) et les push dans medias[]
   function runAllMedia (id) {
     let allMedias = datas[0].media.filter(media => media.photographerId === id)
     return medias.push(allMedias)
@@ -10,12 +10,11 @@ function media () {
     let myMedia = datas[0].media.filter(media => media.photographerId === id)
   }
 
-  // création des photographes et stock dans photographers []
+  // création 1 par 1 des groupes de media
   runAllMedia(mimi)
   runAllMedia(ellie)
   runAllMedia(tracy)
   runAllMedia(nabeel)
   runAllMedia(rhode)
   runAllMedia(marcel)
-  // console.log(medias)
 }

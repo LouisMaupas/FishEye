@@ -20,9 +20,9 @@
         <div class="header artist-infos df fd-r jc-sb">
             <div class="df fd-r">
                 <div class="artist-infos__details">
-                    <h1>Mimi Keel</h1>
-                    <span class="artist-infos__details__title">London, UK</span><br/>
-                    <span class="artist-infos__details__txt">Voir le beau dans le quotidien</span><br/>
+                    <h1>Photographe inconnu</h1>
+                    <span id="city" class="artist-infos__details__title">City</span><br/>
+                    <span id="text" class="artist-infos__details__txt">Text</span><br/>
                     <nav>
                         <a href="#"><span class="link">#portrait</span></a>
                         <a href="#"><span class="link">#events</span></a>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <div class="artist-infos__pic">
-                    <img class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
+                    <img id="img" class="picture--profil" src="../public/img/SamplePhotos/PhotographersIdPhotos/EllieRoseWilkens.jpg" alt="">
                 </div> 
             </div>
         </div id="test">
@@ -57,7 +57,7 @@
                     <span>Contactez-moi</span>
                     <div class="js-modal-close"><img src="../public/img/logo/croix.png" />Fermer la boite modale</div>
                 </div>
-                <span class="modal-photographer">Mimi Keel</span>
+                <span id="name-modal" class="modal-photographer">Photographe inexistant</span>
                 <div class="modal-body">
                     <form 
                     id=""
@@ -214,9 +214,10 @@
         </div>
     </div> 
     <script src="../scripts/modal.js"></script>
-    <script src="../scripts/factory.js" ></script>
-    <script src="../scripts/factory-photographer.js" ></script>
-    <script src="../scripts/factory-media.js" ></script>
+    <script src="../scripts/scripts.js"></script>
+    <script src="../scripts/photographer.js" ></script>
+    <script src="../scripts/media.js" ></script>
+    <script src="../scripts/homePageBuilder.js" ></script>
     <script src="../scripts/photoPageBuilder.js" ></script>
 </body>
 </html>

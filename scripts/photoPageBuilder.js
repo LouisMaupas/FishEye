@@ -6,7 +6,6 @@ function photoPagebuilder () {
   if (isNaN(index) || index < 0 || index > (photographers.length - 1)) {
     console.log('Ce photpgraphe n\'existe pas')
   } else {
-    console.log(photographers)
     photographerFromUrl = photographers[index]
     mediasFromUrl = medias[index]
   }
@@ -42,7 +41,21 @@ function photoPagebuilder () {
     nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
   }
 
-
-
   // diaporama
+  console.log(mediasFromUrl)
+  let imgSrcFolder = 'IL FAUT RECUP LE DOSSIER DES IMAGES'
+  let imgSrc = 'genre dire que cest lindex, on boucle dessus'
+  for (pic of pics) {
+    nav.insertAdjacentHTML('afterbegin', `<figure>
+    <a style="text-decoration: none; color: black;" href="#">
+        <img src="../public/img/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg" alt="photo 1" id="photographerOne"/>
+        <span id="divLibre"> C'est la </span>
+    </a>
+    <figcaption class="df fd-r jc-sb">
+        <span class="pictures__title">Arc-en-ciel</span><br/>
+        <span class="price">70€</span> 
+        <span class="like"> <span class="counter">11</span><i class="fas fa-heart"></i></span>
+    </figcaption>
+</figure>`)
+  }
 }

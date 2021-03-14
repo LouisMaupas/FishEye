@@ -45,3 +45,5 @@ function getDatas (data) {
 // TODO menu déroulant filter photos
 // TODO bouton like
 // TODO inclusvité ARIA ...
+// TODO Mise en page / thumnaisl photograpeh index.html
+// TODO commenter  

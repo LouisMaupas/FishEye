@@ -18,44 +18,31 @@ function photoPagebuilder () {
   let text = document.getElementById('text')
   let img = document.getElementById('img')
   let nameModal = document.getElementById('name-modal')
+  let nav = document.getElementById('nav')
 
-  // On injecte innerHTML
+  // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
   city.innerHTML = photographerFromUrl.name
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
 
-  // MANIPULATION DES IMAGES :
-  // TODO Pour la photo de profil
+  // Afficher la photo de profil
   let nameWithSpaces = photographerFromUrl.name
   let words = nameWithSpaces.split(' ')
   let firstNameIs = words[0]
   let lastNameIs = words[1]
   let fullNameIs = firstNameIs + lastNameIs
-
   const photographersProfilRoot = '../public/img/SamplePhotos/PhotographersIdPhotos/'
   img.src = photographersProfilRoot + fullNameIs + '.jpg'
-  console.log(img.src)
 
-  // Pour le diaporama
+  // tags
+  // On récupère les tags
+  const tags = photographerFromUrl.tags
+  for (tag of tags) {
+    nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
+  }
+
+
+
+  // diaporama
 }
-
-// PISTES
-// trie les postes par title
-// localeCompare
-// écoute quel photographe est selectionné
-// on recupere les bonnes données
-// On génère les vignettes
-//   const thumbnails = function () {
-//     this.elHTML =
-//         `<figure>
-//             <a href="#">
-//                 <img src="../public/img/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg" alt="photo 1" id="photographerOne"/>
-//             </a>
-//             <figcaption class="df fd-r jc-sb">
-//                 <span class="pictures__title">Arc-en-ciel</span><br/>
-//                 <span class="pictures__price">70€</span>
-//                 <span class="like"> <span class="counter">11</span><i class="fas fa-heart"></i></span>
-//             </figcaption>
-//         </figure>`
-//   }

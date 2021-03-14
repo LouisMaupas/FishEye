@@ -1,11 +1,12 @@
 function photoPagebuilder () {
   let photographerFromUrl
   let mediasFromUrl
-  let urlSearch = new URLSearchParams(window.location.search)
+  const urlSearch = new URLSearchParams(window.location.search)
   const index = parseInt(urlSearch.get('photo'))
-  if(isNaN(index) || index < 0 || index > (photographers.length - 1)) {
+  if (isNaN(index) || index < 0 || index > (photographers.length - 1)) {
     console.log('Ce photpgraphe n\'existe pas')
   } else {
+    console.log(photographers)
     photographerFromUrl = photographers[index]
     mediasFromUrl = medias[index]
   }

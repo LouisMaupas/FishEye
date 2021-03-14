@@ -39,9 +39,9 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO bouton like
-// TODO changer photo de profil / photographe
 // TODO changer tags span / photographe
+// TODO Chargers les photos 
 // TODO CAROUSSELLE DE PHOTOS
-// TODO inclusvité ARIA ...
 // TODO menu déroulant filter photos
+// TODO bouton like
+// TODO inclusvité ARIA ...

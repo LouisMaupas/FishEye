@@ -18,6 +18,7 @@ function photoPagebuilder () {
   let img = document.getElementById('img')
   let nameModal = document.getElementById('name-modal')
   let nav = document.getElementById('nav')
+  let pictures = document.getElementById('pictures')
 
   // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
@@ -45,16 +46,16 @@ function photoPagebuilder () {
   console.log(mediasFromUrl)
   let imgSrcFolder = 'IL FAUT RECUP LE DOSSIER DES IMAGES'
   let imgSrc = 'genre dire que cest lindex, on boucle dessus'
-  for (pic of pics) {
-    nav.insertAdjacentHTML('afterbegin', `<figure>
+  for (pic of mediasFromUrl) {
+    let picPrice = pic.price
+    pictures.insertAdjacentHTML('afterbegin', `<figure>
     <a style="text-decoration: none; color: black;" href="#">
-        <img src="../public/img/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg" alt="photo 1" id="photographerOne"/>
-        <span id="divLibre"> C'est la </span>
+        <img src="../public/img/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg" alt="Une photo"/>
     </a>
     <figcaption class="df fd-r jc-sb">
-        <span class="pictures__title">Arc-en-ciel</span><br/>
-        <span class="price">70€</span> 
-        <span class="like"> <span class="counter">11</span><i class="fas fa-heart"></i></span>
+        <span class="pictures__title">${pic.image}</span><br/>
+        <span class="price">${pic.price}€</span> 
+        <span class="like"> <span class="counter">${pic.likes}</span><i class="fas fa-heart"></i></span>
     </figcaption>
 </figure>`)
   }

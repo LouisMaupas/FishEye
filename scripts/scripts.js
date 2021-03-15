@@ -39,7 +39,6 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO changer tags span / photographe
 // TODO Chargers les photos 
 // TODO CAROUSSELLE DE PHOTOS
 // TODO menu déroulant filter photos

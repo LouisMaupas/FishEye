@@ -12,7 +12,7 @@ class Photographers {
     })
     const MyPromiseResult = MyPromiseOk.then(data => {
       datas = data
-      //TODO  ici fonction qui se déclanche que quand promesse recu et c'est elle qui traitera les données
+      // ici fonction qui se déclanche que quand promesse recu et c'est elle qui traitera les données
       // ET FAUDRAIT RECUP QU'UNE SEULE FOIS LES DATAS
     })
   }

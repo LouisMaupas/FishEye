@@ -43,14 +43,11 @@ function photoPagebuilder () {
   }
 
   // diaporama
-  console.log(mediasFromUrl)
-  let imgSrcFolder = 'IL FAUT RECUP LE DOSSIER DES IMAGES'
-  let imgSrc = 'genre dire que cest lindex, on boucle dessus'
   for (pic of mediasFromUrl) {
-    let picPrice = pic.price
+    console.log(mediasFromUrl)
     pictures.insertAdjacentHTML('afterbegin', `<figure>
     <a style="text-decoration: none; color: black;" href="#">
-        <img src="../public/img/SamplePhotos/Ellie Rose/Architecture_Cross_Bar.jpg" alt="Une photo"/>
+        <img src="../public/img/SamplePhotos/${photographerFromUrl.name}/${pic.image}" alt="Une photo"/>
     </a>
     <figcaption class="df fd-r jc-sb">
         <span class="pictures__title">${pic.image}</span><br/>

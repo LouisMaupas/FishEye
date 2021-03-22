@@ -39,10 +39,10 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO Chargers les photos 
-// TODO CAROUSSELLE DE PHOTOS
 // TODO menu déroulant filter photos
 // TODO bouton like
+// TODO Le prix de chaque photographe la vihnett een bas à droiute
+// TODO séparer ficheirs JS plus propre => faire des class ?
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html
 // TODO commenter  

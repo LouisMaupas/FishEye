@@ -82,14 +82,23 @@ function photoPagebuilder () {
     }
   }
 
-  // Bouton like
-  /*
-  let likeBtn = document.querySelectorAll('.like')
-  for (let i = 0; i < likeBtn.length; i++) {
-    let loopCounter = likeBtn[i].previousSibling
-    loopCounter.innerHTML = ''
-  }
-  */
+  //TODO Bouton like
+  let likeBtnArray = Array.from(document.querySelectorAll('.like'))
+  likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
+    let counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
+    let counterStringAfterLiked = counterIntAfterLiked.toString()
+    let siblingCounterInDom = likeBtn.previousSibling.textContent
+    console.log(siblingCounterInDom) // x
+    console.log(counterStringAfterLiked) // x + 1
+    siblingCounterInDom.innerHTML = counterStringAfterLiked
+  }))
+
+
+  //TODO Tarif
+  const tariff = document.getElementById(tariff)
+  tariff.insertAdjacentHTML('afterbegin', `297081
+  <span class="like"><i class="fas fa-heart"></i></span>
+  300€/jour`)
 
   // TODO fichier à part
   // CARROUSEl

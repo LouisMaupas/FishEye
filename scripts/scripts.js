@@ -41,7 +41,6 @@ function getDatas (data) {
 
 // TODO menu déroulant filter photos
 // TODO bouton like
-// TODO Le prix de chaque photographe la vignet en bas à droiute
 
 // TODO VERSION MOBILE
 // TODO séparer ficheirs JS plus propre => faire des class ?

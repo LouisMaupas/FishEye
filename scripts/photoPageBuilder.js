@@ -19,12 +19,16 @@ function photoPagebuilder () {
   const nameModal = document.getElementById('name-modal')
   const nav = document.getElementById('nav')
   const pictures = document.getElementById('pictures')
+  const tariffLikes = document.getElementById('tariff-likes')
+  const tariffPrices = document.getElementById('tariff-price')
 
   // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
   city.innerHTML = photographerFromUrl.name
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
+  /*tariffLikes.innerHTML = 'JE NE SAIS PAS'
+  tariffPrices.innerHTML = photographerFromUrl.price*/
 
   // Afficher la photo de profil
   const nameWithSpaces = photographerFromUrl.name
@@ -40,9 +44,7 @@ function photoPagebuilder () {
   for (let tag of tags) {
     nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
   }
-
   let mediasFromTri = mediasFromUrl
-
   diaporama()
 
   // TODO FICHIER A PART LE RESTE
@@ -50,6 +52,9 @@ function photoPagebuilder () {
   // TODO Menu Tri des photos
   // Le systm de spoiler
   const dropdown = document.getElementById('dropdown-btn')
+  const dropPopularity = document.getElementById('popularity')
+  const dropTitle = document.getElementById('title')
+  const dropDate = document.getElementById('date')
   dropdown.addEventListener('click', function () {
     const dropdownContent = document.getElementById('dropdown')
     if (dropdownContent.classList.contains('show')) {
@@ -59,18 +64,34 @@ function photoPagebuilder () {
     }
   })
 
+  console.log(mediasFromTri)
+
   // Le systm de tri
-  for (media of mediasFromUrl) {
-    let tagLikes = media.likes
-    let tagDates = media.date
-    let tagName = media.image
-    const popularity = document.getElementById('popularity')
-    const title = document.getElementById('title')
-    const date = document.getElementById('date')
+  function compareFunction(property) {
+    return function (a, b) {
+      // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+      let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+      return result
+    }
   }
+  dropDate.addEventListener('click', function (e) {
+    e.preventDefault()
+    mediasFromTri.sort(compareFunction('date'))
+    diaporama()
+  })
+  dropTitle.addEventListener('click', function (e) {
+    e.preventDefault()
+    mediasFromTri.sort(compareFunction('image'))
+    diaporama()
+  })
+  dropPopularity.addEventListener('click', function (e) {
+    e.preventDefault()
+    mediasFromTri.sort(compareFunction('likes'))
+    diaporama()
+  })
 
   // TODO fichier à part :  diaporama
-  function diaporama (params) {
+  function diaporama () {
     for (let media of mediasFromTri) {
       letNumberOfLikes = media.likes
       if (media.image) {
@@ -125,12 +146,17 @@ function photoPagebuilder () {
   }))
 
   // TODO Tarif
-  /*
-  const tariff = document.getElementById(tariff)
-  tariff.insertAdjacentHTML('afterbegin', `297081
-  <span class="like"><i class="fas fa-heart"></i></span>
-  300€/jour`)
- */
+  const tariff = document.getElementById('tariff')
+  let counter = 0
+  for (let media of mediasFromUrl) {
+  counter += media.likes
+  }
+
+
+  tariff.insertAdjacentHTML('afterbegin', `<span id="tariff-likes">${counter}</span>
+  <span><i class="fas fa-heart"></i></span>
+  <span id="tariff-price">${photographerFromUrl.price}</span>€/jour`)
+ 
 
   // TODO fichier à part
   // CARROUSEl

@@ -36,14 +36,48 @@ function photoPagebuilder () {
   img.src = photographersProfilRoot + fullNameIs + '.jpg'
 
   // tags
-  // On récupère les tags
   const tags = photographerFromUrl.tags
-  for (tag of tags) {
+  for (let tag of tags) {
     nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
   }
 
-  // diaporama
+  
+
+  // TODO FICHIER A PART LE RESTE
+
+  // TODO Menu Tri des photos
+  let mediasFromTri = mediasFromUrl
   for (media of mediasFromUrl) {
+    let tagLikes = media.likes
+    let tagDates = media.date
+    let tagName = media.image
+    const options = document.querySelector('select')
+    const optionPopularity = options[0]
+    const optionDate = options[1]
+    const optionTitle = options[2]
+    optionDate.addEventListener('click', function (e) {
+      function compare(a, b) {
+        if (a.date < b.date) {
+          return -1
+        }
+        if (a.date > b.date) {
+          return 1
+        }
+        return 0
+      }
+      mediasFromTri = mediasFromTri.sort(compare)
+    })
+    optionTitle.addEventListener('click', function (e) {
+      mediasFromTri = mediasFromUrl.sort()
+    })
+  }
+
+  // TODO fichier à part :  diaporama
+  for (let media of mediasFromTri) {
+    console.log(mediasFromUrl)
+    console.log(medias)
+    letNumberOfLikes = media.likes
+    console.log(letNumberOfLikes)
     if (media.image) {
       const searchRegExp = /.jpg|.mp4/g
       const replaceWith = ''
@@ -58,7 +92,7 @@ function photoPagebuilder () {
       <figcaption class="df fd-r jc-sb">
           <span class="pictures__title">${imageName}</span><br/>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${media.likes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
     } else if (media.video) {
@@ -76,13 +110,13 @@ function photoPagebuilder () {
       <figcaption class="df fd-r jc-sb">
           <span class="pictures__title">${videoName}</span><br/>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${media.likes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
     }
   }
 
-  //TODO Bouton like
+  // TODO Bouton like
   let likeBtnArray = Array.from(document.querySelectorAll('.like'))
   likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
     let counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
@@ -93,12 +127,13 @@ function photoPagebuilder () {
     siblingCounterInDom.innerHTML = counterStringAfterLiked
   }))
 
-
-  //TODO Tarif
+  // TODO Tarif
+  /*
   const tariff = document.getElementById(tariff)
   tariff.insertAdjacentHTML('afterbegin', `297081
   <span class="like"><i class="fas fa-heart"></i></span>
   300€/jour`)
+ */
 
   // TODO fichier à part
   // CARROUSEl
@@ -115,7 +150,6 @@ function photoPagebuilder () {
         new Lightbox(e.currentTarget.getAttribute('src'), gallery) // et pour chaque image on crée un lightbox
       }))
     }
-
 
     constructor (url, images) {
       // on construit le DOM a partir de l'url de l'image passé en parametre
@@ -154,9 +188,9 @@ function photoPagebuilder () {
       e.preventDefault()
       this.element.classList.add('fadeOut')
       window.setTimeout(() => {
-       // this.element.remove() // this.element.parentElement.removeChild(this.element)
-       this.element.innerHTML = ''
-       this.element.classList.remove('fadeOut', 'lightbox')
+        // this.element.remove() // this.element.parentElement.removeChild(this.element)
+        this.element.innerHTML = ''
+        this.element.classList.remove('fadeOut', 'lightbox')
       }, 500)
       document.removeEventListener('keyup', this.onKeyUp) // on supprime l'event
     }

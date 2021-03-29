@@ -41,51 +41,46 @@ function photoPagebuilder () {
     nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
   }
 
-  
+  let mediasFromTri = mediasFromUrl
+
+  diaporama()
 
   // TODO FICHIER A PART LE RESTE
 
   // TODO Menu Tri des photos
-  let mediasFromTri = mediasFromUrl
+  // Le systm de spoiler
+  const dropdown = document.getElementById('dropdown-btn')
+  dropdown.addEventListener('click', function () {
+    const dropdownContent = document.getElementById('dropdown')
+    if (dropdownContent.classList.contains('show')) {
+      dropdownContent.classList.remove('show')
+    } else {
+      dropdownContent.classList.add('show')
+    }
+  })
+
+  // Le systm de tri
   for (media of mediasFromUrl) {
     let tagLikes = media.likes
     let tagDates = media.date
     let tagName = media.image
-    const options = document.querySelector('select')
-    const optionPopularity = options[0]
-    const optionDate = options[1]
-    const optionTitle = options[2]
-    optionDate.addEventListener('click', function (e) {
-      function compare(a, b) {
-        if (a.date < b.date) {
-          return -1
-        }
-        if (a.date > b.date) {
-          return 1
-        }
-        return 0
-      }
-      mediasFromTri = mediasFromTri.sort(compare)
-    })
-    optionTitle.addEventListener('click', function (e) {
-      mediasFromTri = mediasFromUrl.sort()
-    })
+    const popularity = document.getElementById('popularity')
+    const title = document.getElementById('title')
+    const date = document.getElementById('date')
   }
 
   // TODO fichier à part :  diaporama
-  for (let media of mediasFromTri) {
-    console.log(mediasFromUrl)
-    console.log(medias)
-    letNumberOfLikes = media.likes
-    console.log(letNumberOfLikes)
-    if (media.image) {
-      const searchRegExp = /.jpg|.mp4/g
-      const replaceWith = ''
-      const searchRegExpTwo = /_/g
-      const replaceWithTwo = ' '
-      let imageName = media.image.replace(searchRegExp, replaceWith)
-      imageName = media.image.replace(searchRegExpTwo, replaceWithTwo)
-      pictures.insertAdjacentHTML('afterbegin', `<figure>
+  function diaporama (params) {
+    for (let media of mediasFromTri) {
+      letNumberOfLikes = media.likes
+      if (media.image) {
+        const searchRegExp = /.jpg|.mp4/g
+        const replaceWith = ''
+        const searchRegExpTwo = /_/g
+        const replaceWithTwo = ' '
+        let imageName = media.image.replace(searchRegExp, replaceWith)
+        imageName = media.image.replace(searchRegExpTwo, replaceWithTwo)
+        pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <img class="slideshow" src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.image}" alt="Une photo"/>
       </a>
@@ -95,14 +90,14 @@ function photoPagebuilder () {
           <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
-    } else if (media.video) {
-      const searchRegExp = /.jpg|.mp4/g
-      const replaceWith = ''
-      const searchRegExpTwo = /_/g
-      const replaceWithTwo = ' '
-      let videoName = media.video.replace(searchRegExp, replaceWith)
-      videoName = media.video.replace(searchRegExpTwo, replaceWithTwo)
-      pictures.insertAdjacentHTML('afterbegin', `<figure>
+      } else if (media.video) {
+        const searchRegExp = /.jpg|.mp4/g
+        const replaceWith = ''
+        const searchRegExpTwo = /_/g
+        const replaceWithTwo = ' '
+        let videoName = media.video.replace(searchRegExp, replaceWith)
+        videoName = media.video.replace(searchRegExpTwo, replaceWithTwo)
+        pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <video src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.video}" controls poster="../public/img/play.svg" height="300" width="350">vidéo</video>
           <!-- <img class="slideshow" src="../public/img/play.svg" alt="Une photo"/> -->
@@ -113,8 +108,10 @@ function photoPagebuilder () {
           <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
+      }
     }
-  }
+  } 
+  
 
   // TODO Bouton like
   let likeBtnArray = Array.from(document.querySelectorAll('.like'))

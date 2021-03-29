@@ -38,9 +38,39 @@
 }
 
 .artist-pictures {
-    & #tri {
-        font-size: 18px;
-        font-weight: bold;
+    &__title {
+    }
+    &__dropdown{
+        position: relative;
+        display: inline-block;
+        &__dropdown-btn {
+            background-color: $color-primary;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            &:hover, &:focus{
+                background-color: $color-secondary;
+            }
+        }
+        & .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            background-color: $color-primary;
+            overflow: auto;
+            z-index: 1;
+            & a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block; 
+                &:hover {
+                    background-color: $color-secondary;
+                }
+            }
+        }
     }
     &__main {
         display: grid;
@@ -48,6 +78,10 @@
         grid-template-columns: repeat(auto-fill, 350px);
         gap: 50px;
     } 
+}
+
+.show {
+    display: block!important;
 }
 
 #tariff {

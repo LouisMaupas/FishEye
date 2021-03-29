@@ -103,12 +103,15 @@
                 <!--lightbox-->
         </div>
         <div class="artist-pictures">
-            <label for="tri" id="tri">Trier par</label>
-            <select id="tri" name="tri" size="1">
-                <option value="option1">Popularité</option>
-                <option value="option2">Date</option>
-                <option value="Option3">Titre</option>
-            </select>
+            <span class="artist-pictures__title">Trier par</span>
+            <div class="artist-pictures__dropdown">
+                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn">Trier par</div >
+                <div id="dropdown" class="dropdown-content">
+                  <a id="#popularity" href="#popularity">Popularité</a>
+                  <a id="#date" href="https://www.google.fr/">Date</a>
+                  <a id="#title" href="#title">Titre</a>
+                </div>
+            </div>
             <div id="pictures" class="artist-pictures__main">
                 <!--Photographe's pictures-->
             </div>    
@@ -123,5 +126,6 @@
     <script src="../scripts/media.js" ></script>
     <script src="../scripts/homePageBuilder.js" ></script>
     <script src="../scripts/photoPageBuilder.js" ></script>
+    <script src="../scripts/photoPagebuilderScripts/slideshow.js" ></script>
 </body>
 </html>

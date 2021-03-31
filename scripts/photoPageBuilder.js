@@ -1,6 +1,7 @@
 function photoPagebuilder () {
   let photographerFromUrl
   let mediasFromUrl
+  console.log(mediasFromUrl)
   const urlSearch = new URLSearchParams(window.location.search)
   const index = parseInt(urlSearch.get('photo'))
   if (isNaN(index) || index < 0 || index > (photographers.length - 1)) {
@@ -64,19 +65,26 @@ function photoPagebuilder () {
     }
   })
 
-  console.log(mediasFromTri)
+
 
   // Le systm de tri
   function compareFunction(property) {
+
     return function (a, b) {
       // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
       let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+      console.log(a[property], b[property], result)
       return result
     }
   }
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
+    console.log(mediasFromTri)
     mediasFromTri.sort(compareFunction('date'))
+    setTimeout(function() {
+      console.log(mediasFromTri)
+    }, 1000)
+
     diaporama()
   })
   dropTitle.addEventListener('click', function (e) {
@@ -92,6 +100,7 @@ function photoPagebuilder () {
 
   // TODO fichier à part :  diaporama
   function diaporama () {
+    pictures.innerHTML = ''
     for (let media of mediasFromTri) {
       letNumberOfLikes = media.likes
       if (media.image) {
@@ -139,10 +148,7 @@ function photoPagebuilder () {
   likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
     let counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
     let counterStringAfterLiked = counterIntAfterLiked.toString()
-    let siblingCounterInDom = likeBtn.previousSibling.textContent
-    console.log(siblingCounterInDom) // x
-    console.log(counterStringAfterLiked) // x + 1
-    siblingCounterInDom.innerHTML = counterStringAfterLiked
+    likeBtn.previousSibling.innerHTML = counterStringAfterLiked
   }))
 
   // TODO Tarif

@@ -28,8 +28,6 @@ function photoPagebuilder () {
   city.innerHTML = photographerFromUrl.name
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
-  /*tariffLikes.innerHTML = 'JE NE SAIS PAS'
-  tariffPrices.innerHTML = photographerFromUrl.price*/
 
   // Afficher la photo de profil
   const nameWithSpaces = photographerFromUrl.name
@@ -69,20 +67,19 @@ function photoPagebuilder () {
 
   // Le systm de tri
   function compareFunction(property) {
-
     return function (a, b) {
+      if (property === "date") {
+        return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
+      }
       // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
       let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
-      console.log(a[property], b[property], result)
       return result
     }
   }
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
-    console.log(mediasFromTri)
     mediasFromTri.sort(compareFunction('date'))
     setTimeout(function() {
-      console.log(mediasFromTri)
     }, 1000)
 
     diaporama()

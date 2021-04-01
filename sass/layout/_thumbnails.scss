@@ -7,3 +7,11 @@
         }
     }
 }
+
+.picture-profil {
+    object-fit: cover; 
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    clip-path: circle(40%);
+}

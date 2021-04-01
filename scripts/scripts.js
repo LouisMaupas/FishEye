@@ -38,12 +38,12 @@ renderData()
 function getDatas (data) {
   datas.push(data)
 }
-
-// TODO menu déroulant filter photos
-// TODO bouton like
-
+// TODO trie des vidéos : if img alors nom = media.img sinon media.video PUIS trie
+// TODO Dropdown menu a finir + reste déroulé à fix
+// TODO bouton like : bug quand on a trie on peut plus liker
 // TODO VERSION MOBILE
-// TODO séparer ficheirs JS plus propre => faire des class ?
+// TODO  JS plus propre => BEM 
+// TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html
 // TODO commenter  

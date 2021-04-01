@@ -63,15 +63,12 @@ function photoPagebuilder () {
     }
   })
 
-
-
   // Le systm de tri
-  function compareFunction(property) {
+  function compareFunction (property) {
     return function (a, b) {
-      if (property === "date") {
+      if (property === 'date') {
         return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
       }
-      // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
       let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
       return result
     }
@@ -79,8 +76,7 @@ function photoPagebuilder () {
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     mediasFromTri.sort(compareFunction('date'))
-    setTimeout(function() {
-    }, 1000)
+    console.log(mediasFromTri)
 
     diaporama()
   })
@@ -137,8 +133,7 @@ function photoPagebuilder () {
   </figure>`)
       }
     }
-  } 
-  
+  }
 
   // TODO Bouton like
   let likeBtnArray = Array.from(document.querySelectorAll('.like'))

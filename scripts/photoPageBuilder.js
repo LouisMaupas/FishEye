@@ -9,12 +9,14 @@ function photoPagebuilder () {
   } else {
     photographerFromUrl = photographers[index]
     mediasFromUrl = medias[index]
+    console.log(photographerFromUrl)
   }
 
   // CONSTRUCTION DE LA PAGE
   // On recuperer toutes les balises à modifier
   const title = document.querySelector('h1')
-  const name = document.getElementById('name')
+  const city = document.getElementById('city')
+  const country = document.getElementById('country')
   const text = document.getElementById('text')
   const img = document.getElementById('img')
   const nameModal = document.getElementById('name-modal')
@@ -23,7 +25,8 @@ function photoPagebuilder () {
 
   // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
-  name.innerHTML = photographerFromUrl.name
+  city.innerHTML = photographerFromUrl.city + ','
+  country.innerHTML = photographerFromUrl.country
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
 

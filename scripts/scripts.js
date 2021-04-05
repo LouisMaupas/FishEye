@@ -56,7 +56,11 @@ function getDatas (data) {
 
 // TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun
 
-// TODO contactez moi modal mise en page a faire
+// TODO mise en page
+//    contactez moi modal mise en page a faire
+//    photo gallery bug
+//    photo gallery espacement kike et prix
+
 
 // TODO titre enlever .JPG
 

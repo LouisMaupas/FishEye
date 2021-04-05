@@ -1,6 +1,8 @@
-.photo-container{
-    max-width: 1555px;
-    margin: 2em 3em;
+@media screen and (min-width: 701px) {
+    .photo-container{
+        max-width: 1555px;
+        margin: 2em 3em;
+    }
 }
 
 .header {
@@ -85,26 +87,22 @@
 }
 
 #tariff {
-    background-color: $color-secondary;
+    background-color: $color-secondary-lighter;
     font-weight: 500;
     font-size: 24px;
     text-align: center;
     color: #000000;
-    width: 376px;
-    height: 89px;
+    padding: 21px 34px 10px 34px;
     border-radius: 5px;
     /*position*/
-    /*
-    position: absolute;
-    right: 0;
+    position: fixed;
     bottom: 0;
-    */
+    right: 5%;
 }
 
 select {
     background-color: $color-primary;
     color: white;
-    //height: 180px;
     width: 170px;
     overflow: hidden;
 	text-overflow: ellipsis;
@@ -129,11 +127,13 @@ select {
     }
 }
 
+
+
 @media screen and (max-width: 700px) {
     .photo-container{
         width: auto;
+        margin: 1em;
     }
-
     .artist-infos {
     margin: auto;
     padding: 0;
@@ -155,7 +155,7 @@ select {
             }
         }
         &__btn{
-            margin-left: 1em;
+            display: none;
         }
         &__pic{
             margin-right: 1em;
@@ -171,5 +171,15 @@ select {
             display: flex;
             flex-direction: column;
         } 
+    }
+
+    #contact-me {
+        background-color: red;
+        position: fixed;
+        z-index: 100;
+        bottom: 0;
+    }
+    #tariff {
+        display: none;
     }
 }

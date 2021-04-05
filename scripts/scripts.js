@@ -41,6 +41,8 @@ function getDatas (data) {
 // TODO trie des vidéos : if img alors nom = media.img sinon media.video PUIS trie
 // TODO Dropdown menu a finir + reste déroulé à fix
 // TODO bouton like : bug quand on a trie on peut plus liker
+// TODO tarifff
+
 // TODO VERSION MOBILE
 // TODO  JS plus propre => BEM 
 // TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt

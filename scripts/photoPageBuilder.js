@@ -20,8 +20,6 @@ function photoPagebuilder () {
   const nameModal = document.getElementById('name-modal')
   const nav = document.getElementById('nav')
   const pictures = document.getElementById('pictures')
-  const tariffLikes = document.getElementById('tariff-likes')
-  const tariffPrices = document.getElementById('tariff-price')
 
   // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
@@ -40,15 +38,15 @@ function photoPagebuilder () {
 
   // tags
   const tags = photographerFromUrl.tags
-  for (let tag of tags) {
+  for (const tag of tags) {
     nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
   }
-  let mediasFromTri = mediasFromUrl
+  const mediasFromTri = mediasFromUrl
   diaporama()
 
   // TODO FICHIER A PART LE RESTE
 
-  // TODO Menu Tri des photos
+  // TODO fichier a part Menu Tri des photos
   // Le systm de spoiler
   const dropdown = document.getElementById('dropdown-btn')
   const dropPopularity = document.getElementById('popularity')
@@ -66,23 +64,27 @@ function photoPagebuilder () {
   // Le systm de tri
   function compareFunction (property) {
     return function (a, b) {
+      console.log(mediasFromTri)
+      if (property === 'title') {
+        // if (mediasFromTri.hasOwnProperty('image'))
+        console.log('yey')
+      }
       if (property === 'date') {
         return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
       }
-      let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+      const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
       return result
     }
   }
+  console.log(mediasFromTri)
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     mediasFromTri.sort(compareFunction('date'))
-    console.log(mediasFromTri)
-
     diaporama()
   })
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
-    mediasFromTri.sort(compareFunction('image'))
+    mediasFromTri.sort(compareFunction('title'))
     diaporama()
   })
   dropPopularity.addEventListener('click', function (e) {
@@ -91,11 +93,19 @@ function photoPagebuilder () {
     diaporama()
   })
 
+  // TODO Bouton like
+  const likeBtnArray = Array.from(document.querySelectorAll('.like'))
+  likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
+    const counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
+    const counterStringAfterLiked = counterIntAfterLiked.toString()
+    likeBtn.previousSibling.innerHTML = counterStringAfterLiked
+  }))
+
   // TODO fichier à part :  diaporama
   function diaporama () {
     pictures.innerHTML = ''
-    for (let media of mediasFromTri) {
-      letNumberOfLikes = media.likes
+    for (const media of mediasFromTri) {
+      const NumberOfLikes = media.likes
       if (media.image) {
         const searchRegExp = /.jpg|.mp4/g
         const replaceWith = ''
@@ -110,7 +120,7 @@ function photoPagebuilder () {
       <figcaption class="df fd-r jc-sb">
           <span class="pictures__title">${imageName}</span><br/>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
       } else if (media.video) {
@@ -128,33 +138,22 @@ function photoPagebuilder () {
       <figcaption class="df fd-r jc-sb">
           <span class="pictures__title">${videoName}</span><br/>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${letNumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
       </figcaption>
   </figure>`)
       }
     }
   }
 
-  // TODO Bouton like
-  let likeBtnArray = Array.from(document.querySelectorAll('.like'))
-  likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
-    let counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
-    let counterStringAfterLiked = counterIntAfterLiked.toString()
-    likeBtn.previousSibling.innerHTML = counterStringAfterLiked
-  }))
-
   // TODO Tarif
   const tariff = document.getElementById('tariff')
   let counter = 0
-  for (let media of mediasFromUrl) {
-  counter += media.likes
+  for (const media of mediasFromUrl) {
+    counter += media.likes
   }
-
-
   tariff.insertAdjacentHTML('afterbegin', `<span id="tariff-likes">${counter}</span>
   <span><i class="fas fa-heart"></i></span>
   <span id="tariff-price">${photographerFromUrl.price}</span>€/jour`)
- 
 
   // TODO fichier à part
   // CARROUSEl
@@ -238,7 +237,7 @@ function photoPagebuilder () {
 
     // Injecte le HTML
     // recup en entrée la src d'image et retoune un element html
-    // Lors du clic nous allons construire la structure HTML de notre lightbox 
+    // Lors du clic nous allons construire la structure HTML de notre lightbox
     // et greffer les différents comportements.
     buildDOM (url) {
       const dom = document.getElementById('lightbox--receptacle')

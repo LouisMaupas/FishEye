@@ -54,7 +54,10 @@
 }
 
 .artist-pictures {
+    margin-top: 50px;
     &__title {
+        font-weight: bold;
+        margin-right: 1em;
     }
     &__dropdown{
         position: relative;
@@ -94,6 +97,7 @@
         }
     }
     &__main {
+        margin-top: 50px;
         display: grid;
         justify-content: center;
         grid-template-columns: repeat(auto-fill, 350px);

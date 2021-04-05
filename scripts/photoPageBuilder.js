@@ -149,6 +149,7 @@ function photoPagebuilder () {
   }
 
   // TODO Tarif
+  // tarif()
   const tariff = document.getElementById('tariff')
   let counter = 0
   for (const media of mediasFromUrl) {

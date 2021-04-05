@@ -50,8 +50,7 @@ function getDatas (data) {
 
 // TODO VERSION MOBILE
 //  - Page photographe
-//  - fenetre lightbox
-//  - pagge contact
+//  - pagge contact + btn contactez moi sur la page modal contactr
 //  - btn contactez moi bug
 
 // TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun

@@ -103,6 +103,9 @@
         justify-content: center;
         grid-template-columns: repeat(auto-fill, 350px);
         gap: 50px;
+        & .slideshow {
+            object-fit: cover;
+        }
     } 
 }
 
@@ -182,6 +185,10 @@ select {
         }
         &__pic{
             margin-right: 1em;
+            & img {
+                width: 125px;
+                height: auto;
+            }
         }
     }
 

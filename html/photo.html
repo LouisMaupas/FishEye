@@ -21,7 +21,7 @@
             <div class="df fd-r">
                 <div class="artist-infos__details">
                     <h1>Photographe inconnu</h1>
-                    <span id="city" class="artist-infos__details__title">Name</span><br/>
+                    <span id="name" class="artist-infos__details__title">Name</span><br/>
                     <span id="text" class="artist-infos__details__txt">Text</span><br/>
                     <nav id="nav">
                     </nav>
@@ -54,6 +54,7 @@
             </div>    
         </div>
     </div>
+        <!--MODAL-->
         <aside id="modal" class="modal content display-none" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal">
             <div class="modal-wrapper js-modal-stop">
                 <div class="modal-header df jc-sb">
@@ -63,7 +64,7 @@
                 <span id="name-modal" class="modal-photographer">Photographe inexistant</span>
                 <div class="modal-body">
                     <form 
-                    id=""
+                    id="modal-form"
                     name=""
                     action=""
                     method=""
@@ -101,30 +102,36 @@
                         </div>
                         <div class="formData">
                             <label for="text">Votre message</label><br>
+                            <textarea form="modal-form" id="text" name="text" rows="5" cols="33"></textarea>
+                           <!--
                             <input
                             class="text-control"
                             type="text"
                             id="text"
                             name="text"
                             required 
-                            /><br>
+                            />
+                           -->
+                            <br>
                         </div>
-                        <button class="button button--static" >Envoyer</button>
+                        <button class="button button--static">Envoyer</button>
                     </form>
                 </div>
             </div>
         </aside>
-        <!--MODALE PAGE END-->
+        <!--lightbox-->
         <div id="lightbox--receptacle">
-                <!--lightbox-->
         </div>
-
+        <!--tarifs-->
         <div id="tariff">
-
         </div>
-        <a href="#modal" class="modal-link button button--static"><div id="contact-me">Contactez-moi</div></a>
+        <!-- btn contact mobile-->
+        <div id="contact-me">
+            <a href="#modal" class="modal-link">
+                Contactez-moi
+            </a>
+        </div>
 
-    </div> 
     <script src="../scripts/modal.js"></script>
     <script src="../scripts/scripts.js"></script>
     <script src="../scripts/photographer.js" ></script>

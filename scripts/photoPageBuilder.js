@@ -14,7 +14,7 @@ function photoPagebuilder () {
   // CONSTRUCTION DE LA PAGE
   // On recuperer toutes les balises à modifier
   const title = document.querySelector('h1')
-  const city = document.getElementById('city')
+  const name = document.getElementById('name')
   const text = document.getElementById('text')
   const img = document.getElementById('img')
   const nameModal = document.getElementById('name-modal')
@@ -23,7 +23,7 @@ function photoPagebuilder () {
 
   // On injecte par innerHTML les elements simples à modofier (du texte)
   title.innerHTML = photographerFromUrl.name
-  city.innerHTML = photographerFromUrl.name
+  name.innerHTML = photographerFromUrl.name
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
 
@@ -39,9 +39,8 @@ function photoPagebuilder () {
   // tags
   const tags = photographerFromUrl.tags
   for (const tag of tags) {
-    nav.insertAdjacentHTML('afterbegin', `<a href="#"><span class="link">#${tag}</span>`)
+    nav.insertAdjacentHTML('afterbegin', `<a href="${url}"><span class="link">#${tag}</span>`)
   }
-  const mediasFromTri = mediasFromUrl
   diaporama()
 
   // TODO FICHIER A PART LE RESTE
@@ -57,17 +56,15 @@ function photoPagebuilder () {
   dropdown.addEventListener('click', function () {
     dropdownContent.classList.toggle('show')
   })
-  let changeMyMenu = function (name) {
+  const changeMyMenu = function (name) {
     changeMyMenuName.innerHTML = name
-    
   }
 
   // Le systm de tri
   function compareFunction (property) {
     return function (a, b) {
-      console.log(mediasFromTri)
       if (property === 'title') {
-        // if (mediasFromTri.hasOwnProperty('image'))
+        // if (mediasFromUrl.hasOwnProperty('image'))
         console.log('yey')
       }
       if (property === 'date') {
@@ -80,19 +77,19 @@ function photoPagebuilder () {
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Date')
-    mediasFromTri.sort(compareFunction('date'))
+    mediasFromUrl.sort(compareFunction('date'))
     diaporama()
   })
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Titre')
-    mediasFromTri.sort(compareFunction('title'))
+    mediasFromUrl.sort(compareFunction('title'))
     diaporama()
   })
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Popularité')
-    mediasFromTri.sort(compareFunction('likes'))
+    mediasFromUrl.sort(compareFunction('likes'))
     diaporama()
   })
 
@@ -107,7 +104,7 @@ function photoPagebuilder () {
   // TODO fichier à part :  diaporama
   function diaporama () {
     pictures.innerHTML = ''
-    for (const media of mediasFromTri) {
+    for (const media of mediasFromUrl) {
       const NumberOfLikes = media.likes
       if (media.image) {
         const searchRegExp = /.jpg|.mp4/g

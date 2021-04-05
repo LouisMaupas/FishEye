@@ -36,7 +36,18 @@
         }
       }
       & .modal-body {
-        /**/
+        & .formData {
+          & input {
+            width: 599px;
+            height: 68px;
+          }
+          & textarea {
+            resize: none;
+            width: 559px;
+            height: 170px;
+
+          }
+        }
       }
       & .modal-photographer {
         font-size: 64px;

@@ -1,7 +1,10 @@
 @media screen and (min-width: 701px) {
-    .photo-container{
+    .photo-container {
         max-width: 1555px;
         margin: 2em auto;
+    }
+    #contact-me {
+        display: none;
     }
 }
 
@@ -14,7 +17,6 @@
     margin-bottom: 20px;
     // align-items: center;
     &__details{
-        border: 1px solid green;
         & > h1 {
             font-size: 64px;
             color: $color-secondary;
@@ -24,24 +26,29 @@
         &__title {
             color: $color-primary;
             font-size: 24px;
-            margin-bottom: 1em;
         }
         &__txt {
-            margin-top: 1em;
             color: $color-fourth;
             font-size: 18px;
         }
-        & nav a span {
-           font-size: 18px; 
+        & nav {
+            margin: 1em 0;
+            a {
+                margin: 3px;
+                span {
+                    font-size: 18px; 
+                }
+            }
         }
     }
     &__btn{
         margin-top: 1em;
-        border: 1px solid blue;
         margin-left: 1em;
+        & a {
+            color: white;
+        }
     }
     &__pic{
-        border: 1px solid red;
         margin-right: 1em;
     }
 }
@@ -106,7 +113,6 @@
     color: #000000;
     padding: 21px 34px 10px 34px;
     border-radius: 5px;
-    /*position*/
     position: fixed;
     bottom: 0;
     right: 5%;
@@ -186,10 +192,18 @@ select {
     }
 
     #contact-me {
-        background-color: red;
+        background-color: $color-primary;
         position: fixed;
-        z-index: 100;
-        bottom: 0;
+        bottom: 5%;
+        left: 25%;
+        z-index: 1000;
+        padding: 0.5em;
+        height: auto;
+        padding: none;
+        border-radius: 5px;
+        & a {
+            color: white;
+        }
     }
     #tariff {
         display: none;

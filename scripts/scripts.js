@@ -38,13 +38,22 @@ renderData()
 function getDatas (data) {
   datas.push(data)
 }
-// TODO trie des vidéos : if img alors nom = media.img sinon media.video PUIS trie
-// TODO Dropdown menu a finir + reste déroulé à fix
-// TODO bouton like : bug quand on a trie on peut plus liker
-// TODO tarifff
+
+// TODO Dropdown menu a faire
+//      - Le menu doit être composé de 3 elements
+//      - css a faire
+
+// TODO BUG QUAND ON TRIE :
+//      - On ne peut plus afficher la lightbox
+//      - On en peux plus liker
+//      - Ne trie pas les vidéo (if img alors nom = media.img sinon media.video PUIS trie)
 
 // TODO VERSION MOBILE
-// TODO  JS plus propre => BEM 
+//  - Page photographe
+//  - fenetre lightbox
+//  - pagge contact
+
+// TODO  JS et CSS plus propre => BEM 
 // TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html

@@ -52,6 +52,10 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
+            width: 170px;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            justify-content: space-between;
             &:hover, &:focus{
                 background-color: $color-secondary;
             }
@@ -59,7 +63,8 @@
         & .dropdown-content {
             display: none;
             position: absolute;
-            min-width: 160px;
+            width: 170px;
+            border-radius: 0 0 5px 5px;
             background-color: $color-primary;
             overflow: auto;
             z-index: 1;

@@ -47,19 +47,20 @@ function photoPagebuilder () {
   // TODO FICHIER A PART LE RESTE
 
   // TODO fichier a part Menu Tri des photos
-  // Le systm de spoiler
+  // Le systm de spoiler pour afficehr le menu de tri
   const dropdown = document.getElementById('dropdown-btn')
   const dropPopularity = document.getElementById('popularity')
   const dropTitle = document.getElementById('title')
   const dropDate = document.getElementById('date')
+  const dropdownContent = document.getElementById('dropdown')
+  const changeMyMenuName = document.getElementById('change-menu-name')
   dropdown.addEventListener('click', function () {
-    const dropdownContent = document.getElementById('dropdown')
-    if (dropdownContent.classList.contains('show')) {
-      dropdownContent.classList.remove('show')
-    } else {
-      dropdownContent.classList.add('show')
-    }
+    dropdownContent.classList.toggle('show')
   })
+  let changeMyMenu = function (name) {
+    changeMyMenuName.innerHTML = name
+    
+  }
 
   // Le systm de tri
   function compareFunction (property) {
@@ -76,19 +77,21 @@ function photoPagebuilder () {
       return result
     }
   }
-  console.log(mediasFromTri)
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
+    changeMyMenu('Date')
     mediasFromTri.sort(compareFunction('date'))
     diaporama()
   })
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
+    changeMyMenu('Titre')
     mediasFromTri.sort(compareFunction('title'))
     diaporama()
   })
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
+    changeMyMenu('Popularité')
     mediasFromTri.sort(compareFunction('likes'))
     diaporama()
   })

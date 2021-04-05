@@ -21,7 +21,7 @@
             <div class="df fd-r">
                 <div class="artist-infos__details">
                     <h1>Photographe inconnu</h1>
-                    <span id="city" class="artist-infos__details__title">City</span><br/>
+                    <span id="city" class="artist-infos__details__title">Name</span><br/>
                     <span id="text" class="artist-infos__details__txt">Text</span><br/>
                     <nav id="nav">
                     </nav>
@@ -30,14 +30,30 @@
                     <div class="button button--static"><a href="#modal" class="modal-link">Contactez-moi</a></div>
                 </div>
             </div>
-            <div>
-                <div class="artist-infos__pic">
-                    <img id="img" class="picture-profil" src="#" alt="">
-                </div> 
-            </div>
+            <div class="artist-infos__pic">
+                <img id="img" class="picture-profil" src="#" alt="">
+            </div> 
         </section>
-
+        <div class="artist-pictures">
+            <span class="artist-pictures__title">Trier par</span>
+            <!---->
+            <div class="artist-pictures__dropdown">
+                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn">
+                    <span id="change-menu-name">Titre</span>
+                    <i class="fas fa-angle-up"></i>
+                </div >
+                <div id="dropdown" class="dropdown-content">
+                  <a id="popularity" href="#">Popularité</a>
+                  <a id="date" href="#">Date</a>
+                  <a id="title" href="#">Titre</a>
+                </div>
+            </div>
+            <!---->
+            <div id="pictures" class="artist-pictures__main">
+                <!--Photographe's pictures-->
+            </div>    
         </div>
+    </div>
         <aside id="modal" class="modal content display-none" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal">
             <div class="modal-wrapper js-modal-stop">
                 <div class="modal-header df jc-sb">
@@ -102,29 +118,11 @@
         <div id="lightbox--receptacle">
                 <!--lightbox-->
         </div>
-        <div class="artist-pictures">
-            <span class="artist-pictures__title">Trier par</span>
-            <!---->
-            <div class="artist-pictures__dropdown">
-                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn">
-                    <span id="change-menu-name">Titre</span>
-                    <i class="fas fa-angle-up"></i>
-                </div >
-                <div id="dropdown" class="dropdown-content">
-                  <a id="popularity" href="#">Popularité</a>
-                  <a id="date" href="#">Date</a>
-                  <a id="title" href="#">Titre</a>
-                </div>
-            </div>
-            <!---->
-            <div id="pictures" class="artist-pictures__main">
-                <!--Photographe's pictures-->
-            </div>    
-        </div>
+
         <div id="tariff">
 
         </div>
-    <a href="#modal" class="modal-link button button--static"><div id="contact-me">Contactez-moi</div></a>
+        <a href="#modal" class="modal-link button button--static"><div id="contact-me">Contactez-moi</div></a>
 
     </div> 
     <script src="../scripts/modal.js"></script>

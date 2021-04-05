@@ -53,6 +53,9 @@ function getDatas (data) {
 //  - fenetre lightbox
 //  - pagge contact
 
+// TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun
+
+
 // TODO  JS et CSS plus propre => BEM 
 // TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
 // TODO inclusvité ARIA ...

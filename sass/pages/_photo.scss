@@ -1,7 +1,7 @@
 @media screen and (min-width: 701px) {
     .photo-container{
         max-width: 1555px;
-        margin: 2em 3em;
+        margin: 2em auto;
     }
 }
 
@@ -11,19 +11,23 @@
 
 .artist-infos {
     margin-top: 40px;
-    padding-top: 56px;
-    padding-left: 50px;
     margin-bottom: 20px;
+    // align-items: center;
     &__details{
+        border: 1px solid green;
         & > h1 {
             font-size: 64px;
             color: $color-secondary;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
         }
         &__title {
             color: $color-primary;
             font-size: 24px;
+            margin-bottom: 1em;
         }
         &__txt {
+            margin-top: 1em;
             color: $color-fourth;
             font-size: 18px;
         }
@@ -32,9 +36,12 @@
         }
     }
     &__btn{
+        margin-top: 1em;
+        border: 1px solid blue;
         margin-left: 1em;
     }
     &__pic{
+        border: 1px solid red;
         margin-right: 1em;
     }
 }

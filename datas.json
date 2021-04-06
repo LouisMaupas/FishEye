@@ -92,7 +92,7 @@
     {
       "id": 9275938,
       "photographerId": 82,
-      "image": "Event_WeddingGazebo.jpg",
+      "image": "Event_Wedding_Gazebo.jpg",
       "tags": ["events"],
       "likes": 69,
       "date": "2018-02-22",
@@ -110,7 +110,7 @@
     {
       "id": 7324238,
       "photographerId": 82,
-      "image": "Event_18thAnniversary.jpg",
+      "image": "Event_18th_Anniversary.jpg",
       "tags": ["events"],
       "likes": 33,
       "date": "2019-06-12",
@@ -183,7 +183,7 @@
     {
       "id": 928587383,
       "photographerId": 925,
-      "image": "Event_VentureConference.jpg",
+      "image": "Event_Venture_Conference.jpg",
       "tags": ["events"],
       "likes": 2,
       "date": "2019-01-02",
@@ -192,7 +192,7 @@
     {
       "id": 725639493,
       "photographerId": 925,
-      "image": "Event_ProductPitch.jpg",
+      "image": "Event_Product_Pitch.jpg",
       "tags": ["events"],
       "likes": 3,
       "date": "2019-05-20",
@@ -201,7 +201,7 @@
     {
       "id": 23394384,
       "photographerId": 925,
-      "image": "Event_KeyboardCheck.jpg",
+      "image": "Event_Keyboard_Check.jpg",
       "tags": ["events"],
       "likes": 52,
       "date": "2019-07-18",
@@ -310,7 +310,7 @@
     {
       "id": 525834234,
       "photographerId": 527,
-      "image": "Portrait_AfternoonBreak.jpg",
+      "image": "Portrait_Afternoon_Break.jpg",
       "tags": ["portait"],
       "likes": 25,
       "date": "2019-01-02",
@@ -329,7 +329,7 @@
     {
       "id": 625025343,
       "photographerId": 243,
-      "image": "Travel_HillsideColor.jpg",
+      "image": "Travel_Hillside_Color.jpg",
       "tags": ["travel"],
       "likes": 85,
       "date": "2019-04-03",
@@ -365,7 +365,7 @@
     {
       "id": 2534342,
       "photographerId": 243,
-      "image": "Event_SeasideWedding.jpg",
+      "image": "Event_Seaside_Wedding.jpg",
       "tags": ["events"],
       "likes": 25,
       "date": "2019-06-21",
@@ -374,7 +374,7 @@
     {
       "id": 65235234,
       "photographerId": 243,
-      "image": "Event_PintoWedding.jpg",
+      "image": "Event_Pinto_Wedding.jpg",
       "tags": ["events"],
       "likes": 52,
       "date": "2019-06-25",
@@ -383,7 +383,7 @@
     {
       "id": 23523434,
       "photographerId": 243,
-      "image": "Event_BenevidesWedding.jpg",
+      "image": "Event_Benevides_Wedding.jpg",
       "tags": ["events"],
       "likes": 77,
       "date": "2019-06-28",
@@ -420,7 +420,7 @@
     {
       "id": 2523434,
       "photographerId": 195,
-      "image": "Travel_SunsetonCanals.jpg",
+      "image": "Travel_Sunseton_Canals.jpg",
       "tags": ["travel"],
       "likes": 53,
       "date": "2019-05-06",
@@ -429,7 +429,7 @@
     {
       "id": 95293534,
       "photographerId": 195,
-      "image": "Travel_OpenMountain.jpg",
+      "image": "Travel_Open_Mountain.jpg",
       "tags": ["travel"],
       "likes": 33,
       "date": "2019-05-12",
@@ -483,7 +483,7 @@
     {
       "id": 9259398453,
       "photographerId": 195,
-      "video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
+      "video": "Architecture_coverr_circle_empty_highway_in_buenos_aires.mp4",
       "tags": ["architecture"],
       "likes": 57,
       "date": "2020-01-20",

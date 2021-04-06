@@ -1,7 +1,6 @@
 function photoPagebuilder () {
   let photographerFromUrl
   let mediasFromUrl
-  console.log(mediasFromUrl)
   const urlSearch = new URLSearchParams(window.location.search)
   const index = parseInt(urlSearch.get('photo'))
   if (isNaN(index) || index < 0 || index > (photographers.length - 1)) {
@@ -9,7 +8,6 @@ function photoPagebuilder () {
   } else {
     photographerFromUrl = photographers[index]
     mediasFromUrl = medias[index]
-    console.log(photographerFromUrl)
   }
 
   // CONSTRUCTION DE LA PAGE
@@ -68,7 +66,6 @@ function photoPagebuilder () {
     return function (a, b) {
       if (property === 'title') {
         // if (mediasFromUrl.hasOwnProperty('image'))
-        console.log('yey')
       }
       if (property === 'date') {
         return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
@@ -114,16 +111,17 @@ function photoPagebuilder () {
         const replaceWith = ''
         const searchRegExpTwo = /_/g
         const replaceWithTwo = ' '
-        let imageName = media.image.replace(searchRegExp, replaceWith)
-        imageName = media.image.replace(searchRegExpTwo, replaceWithTwo)
+        let imageName = media.image.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
         pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <img class="slideshow" src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.image}" alt="Une photo"/>
       </a>
       <figcaption class="df fd-r jc-sb">
-          <span class="pictures__title">${imageName}</span><br/>
+          <div class="pictures__title">${imageName}</div>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="likes">
+            <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          </span>
       </figcaption>
   </figure>`)
       } else if (media.video) {
@@ -131,17 +129,18 @@ function photoPagebuilder () {
         const replaceWith = ''
         const searchRegExpTwo = /_/g
         const replaceWithTwo = ' '
-        let videoName = media.video.replace(searchRegExp, replaceWith)
-        videoName = media.video.replace(searchRegExpTwo, replaceWithTwo)
+        let videoName = media.video.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
         pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <video src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.video}" controls poster="../public/img/play.svg" height="300" width="350">vidéo</video>
           <!-- <img class="slideshow" src="../public/img/play.svg" alt="Une photo"/> -->
       </a>
       <figcaption class="df fd-r jc-sb">
-          <span class="pictures__title">${videoName}</span><br/>
+          <span class="pictures__title">${videoName}</span>
           <span class="price">${media.price}€</span> 
-          <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          <span class="likes">
+            <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+          </span>
       </figcaption>
   </figure>`)
       }

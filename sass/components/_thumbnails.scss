@@ -18,16 +18,8 @@ figure {
         color: $color-primary;
         font-size: 24px;
         line-height: 31px;
-        & .picture__title {
-
-        }
-        &.pictures__price {
-
-        }
-        & .pictures__like {
-            & > i {
-
-            }
+        & .pictures__title {
+            width: 65%;
         }
     }
 }

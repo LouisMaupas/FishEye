@@ -39,14 +39,14 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO Dropdown menu a faire
-//      - Le menu doit être composé de 3 elements
-//      - css a faire
-
 // TODO BUG QUAND ON TRIE :
 //      - On ne peut plus afficher la lightbox
 //      - On en peux plus liker
-//      - Ne trie pas les vidéo (if img alors nom = media.img sinon media.video PUIS trie)
+//      - Ne trie pas les titres
+
+// TODO Dropdown menu a faire
+//      - Le menu doit être composé de 3 elements et l'element actif est affiché quand le menu est fermé
+//      - css a faire
 
 // TODO VERSION MOBILE
 //  - Page photographe
@@ -58,12 +58,9 @@ function getDatas (data) {
 // TODO mise en page
 //    contactez moi modal mise en page a faire
 //    photo gallery bug
-//    photo gallery espacement kike et prix
+//    photo gallery espacement like et prix
 
-
-// TODO titre enlever .JPG
-
-// TODO  JS et CSS plus propre => BEM 
+// TODO JS et CSS plus propre => BEM 
 // TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html

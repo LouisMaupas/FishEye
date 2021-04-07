@@ -38,10 +38,10 @@ renderData()
 function getDatas (data) {
   datas.push(data)
 }
+// TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun
+// => tags dans l'url via GET avec les noms de tag
 
 // TODO Dropdown menu a faire
-//      - Le menu doit être composé de 3 elements et l'element actif est affiché quand le menu est fermé
-// => cacher celui qui est selectionné
 //      - css a faire
 
 // TODO VERSION MOBILE
@@ -49,16 +49,15 @@ function getDatas (data) {
 //  - pagge contact + btn contactez moi sur la page modal contactr
 //  - btn contactez moi bug
 
-// TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun
-// => tags dans l'url
-
 // TODO mise en page
 //    contactez moi modal mise en page a faire
 //    photo gallery bug
 //    photo gallery espacement like et prix
 
-// TODO JS et CSS plus propre => BEM 
+// TODO NAMING DU JS et CSS plus propre => BEM 
 // TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html
 // TODO commenter
+
+// TODO MENTORAT : Check code propre

@@ -86,3 +86,15 @@
 .fw-w {
     flex-wrap: wrap;
 }
+
+.d-none {
+    display: none!important;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline {
+    display: inline;
+}

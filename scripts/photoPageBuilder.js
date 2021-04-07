@@ -77,6 +77,9 @@ function photoPagebuilder () {
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Date')
+    dropDate.classList.add('d-none')
+    dropTitle.classList.remove('d-none')
+    dropPopularity.classList.remove('d-none')
     mediasFromUrl.sort(compareFunction('date'))
     diaporama()
     Lightbox.init()
@@ -85,6 +88,9 @@ function photoPagebuilder () {
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Titre')
+    dropTitle.classList.add('d-none')
+    dropDate.classList.remove('d-none')
+    dropPopularity.classList.remove('d-none')
     mediasFromUrl.sort(compareFunction('title'))
     diaporama()
     Lightbox.init()
@@ -93,6 +99,9 @@ function photoPagebuilder () {
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Popularité')
+    dropPopularity.classList.add('d-none')
+    dropDate.classList.remove('d-none')
+    dropTitle.classList.remove('d-none')
     mediasFromUrl.sort(compareFunction('likes'))
     diaporama()
     Lightbox.init()

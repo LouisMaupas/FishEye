@@ -79,27 +79,38 @@ function photoPagebuilder () {
     changeMyMenu('Date')
     mediasFromUrl.sort(compareFunction('date'))
     diaporama()
+    Lightbox.init()
+    Like.init()
   })
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Titre')
     mediasFromUrl.sort(compareFunction('title'))
     diaporama()
+    Lightbox.init()
+    Like.init()
   })
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Popularité')
     mediasFromUrl.sort(compareFunction('likes'))
     diaporama()
+    Lightbox.init()
+    Like.init()
   })
 
   // TODO Bouton like
-  const likeBtnArray = Array.from(document.querySelectorAll('.like'))
-  likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
-    const counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
-    const counterStringAfterLiked = counterIntAfterLiked.toString()
-    likeBtn.previousSibling.innerHTML = counterStringAfterLiked
-  }))
+  class Like {
+    static init () {
+      const likeBtnArray = Array.from(document.querySelectorAll('.like'))
+      likeBtnArray.forEach(likeBtn => likeBtn.addEventListener('click', e => {
+        const counterIntAfterLiked = parseInt(likeBtn.previousSibling.textContent) + 1
+        const counterStringAfterLiked = counterIntAfterLiked.toString()
+        likeBtn.previousSibling.innerHTML = counterStringAfterLiked
+      }))
+    }
+  }
+  Like.init()
 
   // TODO fichier à part :  diaporama
   function diaporama () {

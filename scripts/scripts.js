@@ -38,9 +38,6 @@ renderData()
 function getDatas (data) {
   datas.push(data)
 }
-// TODO tag de la page photo = lien vers la page d'accueil avec les photographes ayant ce tag en commun
-// => tags dans l'url via GET avec les noms de tag
-
 // TODO Dropdown menu a faire
 //      - css a faire
 

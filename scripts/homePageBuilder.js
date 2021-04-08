@@ -15,15 +15,17 @@ function homePagebuilder () {
       }
     })
   }
-
-  /* */
+  
+  /* Si un tag est passé en parametre, le recupere pour afficher les photogreaphes en rapprot avec ce tag  */
   let homeUrl = new URLSearchParams(window.location.search)
   let tagFromphotographers = homeUrl.get('tag')
-  for (let i = 0; i < photographers.length; i++) {
-    if (photographers[i].classList.contains(tagFromphotographers)) {
-      photographers[i].classList.remove('display-none')
-    } else {
-      photographers[i].classList.add('display-none')
+  if (tagFromphotographers) {
+    for (let i = 0; i < photographers.length; i++) {
+      if (photographers[i].classList.contains(tagFromphotographers)) {
+        photographers[i].classList.remove('display-none')
+      } else {
+        photographers[i].classList.add('display-none')
+      }
     }
   }
 }

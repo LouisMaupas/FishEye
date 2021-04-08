@@ -40,7 +40,7 @@ function photoPagebuilder () {
   // tags
   const tags = photographerFromUrl.tags
   for (const tag of tags) {
-    nav.insertAdjacentHTML('afterbegin', `<a href="${url}"><span class="link">#${tag}</span>`)
+    nav.insertAdjacentHTML('afterbegin', `<a href="${url}?tag=${tag}"><span class="link">#${tag}</span>`)
   }
   diaporama()
 

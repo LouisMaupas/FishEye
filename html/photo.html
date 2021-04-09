@@ -39,14 +39,14 @@
             <span class="artist-pictures__title">Trier par</span>
             <!---->
             <div class="artist-pictures__dropdown">
-                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn">
-                    <span id="change-menu-name">Titre</span>
+                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn" role="button" aria-haspopup=”listbox”, aria-expanded>
+                    <span id="change-menu-name"><div class="dropdown-underline">Titre</div></span>
                     <i class="fas fa-angle-up"></i>
                 </div >
                 <div id="dropdown" class="dropdown-content">
-                  <a id="popularity" href="#">Popularité</a>
-                  <a id="date" href="#">Date</a>
-                  <a id="title" class="d-none" href="#">Titre</a>
+                  <a id="popularity" href="#"  role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Popularité</div></a>
+                  <a id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Date</div></a>
+                  <a id="title" class="d-none" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Titre</div></a>
                 </div>
             </div>
             <!---->

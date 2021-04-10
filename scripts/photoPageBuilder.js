@@ -1,6 +1,4 @@
-/**
- * 
- */
+/** Une fonction retrouve le photographe par son id et stock les médias et les informations du photographe dans 2 variables */
 function photoPagebuilder () {
   let photographerFromUrl
   let mediasFromUrl
@@ -13,8 +11,8 @@ function photoPagebuilder () {
     mediasFromUrl = medias[index]
   }
 
-  // CONSTRUCTION DE LA PAGE
-  // On recuperer toutes les balises à modifier
+  // On recupère les élements du DOM ...
+  // ... qui serviront pour la présentation du photographe
   const title = document.querySelector('h1')
   const city = document.getElementById('city')
   const country = document.getElementById('country')
@@ -23,15 +21,24 @@ function photoPagebuilder () {
   const nameModal = document.getElementById('name-modal')
   const nav = document.getElementById('nav')
   const pictures = document.getElementById('pictures')
+  // ... pour le menu dépliant de tri
+  const dropdown = document.getElementById('dropdown-btn')
+  const dropPopularity = document.getElementById('popularity')
+  const dropTitle = document.getElementById('title')
+  const dropDate = document.getElementById('date')
+  const dropdownContent = document.getElementById('dropdown')
+  const changeMyMenuName = document.getElementById('change-menu-name')
+  // ... pour le bloc du TJM
+  const tariff = document.getElementById('tariff')
 
-  // On injecte par innerHTML les elements simples à modofier (du texte)
+  // On injecte avec innerHTML les informations du photographe
   title.innerHTML = photographerFromUrl.name
   city.innerHTML = photographerFromUrl.city + ','
   country.innerHTML = photographerFromUrl.country
   text.innerHTML = photographerFromUrl.tagline
   nameModal.innerHTML = photographerFromUrl.name
 
-  // Afficher la photo de profil
+  /** Récupère dans les datas le nom et prénom séparé et les réunis sans séparation pour les injecter dans la src de l'image et afficher la photo de profil */
   const nameWithSpaces = photographerFromUrl.name
   const words = nameWithSpaces.split(' ')
   const firstNameIs = words[0]
@@ -40,31 +47,26 @@ function photoPagebuilder () {
   const photographersProfilRoot = '../public/img/SamplePhotos/PhotographersIdPhotos/'
   img.src = photographersProfilRoot + fullNameIs + '.jpg'
 
-  // tags
+  // Affiche les tags liés au photographe
   const tags = photographerFromUrl.tags
   for (const tag of tags) {
     nav.insertAdjacentHTML('afterbegin', `<a href="${url}?tag=${tag}"><span class="link">#${tag}</span>`)
   }
   diaporama()
 
-  // TODO FICHIER A PART LE RESTE
-
-  // TODO fichier a part Menu Tri des photos
-  // Le systm de spoiler pour afficehr le menu de tri
-  const dropdown = document.getElementById('dropdown-btn')
-  const dropPopularity = document.getElementById('popularity')
-  const dropTitle = document.getElementById('title')
-  const dropDate = document.getElementById('date')
-  const dropdownContent = document.getElementById('dropdown')
-  const changeMyMenuName = document.getElementById('change-menu-name')
+  /** Affiche / déplie le menu de tri et change son titre */
   dropdown.addEventListener('click', function () {
     dropdownContent.classList.toggle('show')
   })
-  const changeMyMenu = function (name) {
+  let changeMyMenu = function (name) {
     changeMyMenuName.innerHTML = name
   }
 
-  // Le systm de tri
+  /**
+   * Tri le diaporama d'image par date, popularité ou titre
+   * @param {Property} property Une propriété d'un objet (la date d'un média par ex)
+   * @returns {number} retourne 1 -1 ou 0 pour permetre à la méthode sort() de trier
+   */
   function compareFunction (property) {
     return function (a, b) {
       if (property === 'title') {
@@ -77,6 +79,7 @@ function photoPagebuilder () {
       return result
     }
   }
+  /** On lie la fonction de tri à un evenement d'écoute sur la date et ajuste l'affichage */
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Date')
@@ -88,6 +91,7 @@ function photoPagebuilder () {
     Lightbox.init()
     Like.init()
   })
+  /** les titres */
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Titre')
@@ -99,6 +103,7 @@ function photoPagebuilder () {
     Lightbox.init()
     Like.init()
   })
+  /** la popularité */
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Popularité')
@@ -111,7 +116,7 @@ function photoPagebuilder () {
     Like.init()
   })
 
-  // TODO Bouton like
+  /** Au clic sur le bouton like incrémente le compteur de like */
   class Like {
     static init () {
       const likeBtnArray = Array.from(document.querySelectorAll('.like'))
@@ -124,7 +129,7 @@ function photoPagebuilder () {
   }
   Like.init()
 
-  // TODO fichier à part :  diaporama
+  /** Affiche les médias du photographe */
   function diaporama () {
     pictures.innerHTML = ''
     for (const media of mediasFromUrl) {
@@ -134,7 +139,7 @@ function photoPagebuilder () {
         const replaceWith = ''
         const searchRegExpTwo = /_/g
         const replaceWithTwo = ' '
-        let imageName = media.image.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
+        const imageName = media.image.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
         pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <img class="slideshow" src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.image}" alt="Une photo"/>
@@ -152,7 +157,7 @@ function photoPagebuilder () {
         const replaceWith = ''
         const searchRegExpTwo = /_/g
         const replaceWithTwo = ' '
-        let videoName = media.video.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
+        const videoName = media.video.replace(searchRegExp, replaceWith).replace(searchRegExpTwo, replaceWithTwo)
         pictures.insertAdjacentHTML('afterbegin', `<figure>
       <a style="text-decoration: none; color: black;" href="#">
           <video src="../public/img/SamplePhotos/${photographerFromUrl.name}/${media.video}" controls poster="../public/img/play.svg" height="300" width="350">vidéo</video>
@@ -170,8 +175,7 @@ function photoPagebuilder () {
     }
   }
 
-  // TODO Tarif
-  const tariff = document.getElementById('tariff')
+  /** Affiche le bloc de bas de page avec le tarif journalier et le nombre de like */
   let counter = 0
   for (const media of mediasFromUrl) {
     counter += media.likes
@@ -180,44 +184,55 @@ function photoPagebuilder () {
   <span><i class="fas fa-heart"></i></span>
   <span id="tariff-price">${photographerFromUrl.price}</span>€/jour`)
 
-  // TODO fichier à part
-  // CARROUSEl
+  /** Le carrousel / lightbox */
   class Lightbox {
-    // initialise la lightbox et greffe le comportement sur toutes les images
-    // quand on click ouvre la lightbox
+    /** initialise la lightbox et greffe le comportement sur toutes les images quand on click ouvre la lightbox */
     static init () {
       const links = Array.from(document.querySelectorAll('.slideshow')) // liste des .slidesshow
       const gallery = links.map(link => link.getAttribute('src')) // recup tous les src des .slidesshow
       links.forEach(link => link.addEventListener('click', e => {
         e.preventDefault()
-        // initialise nouvelle lightbox
-        // On recup la src de la cible de l'event déclancheur de la lightbox c a dir l'img .slideshow
-        new Lightbox(e.currentTarget.getAttribute('src'), gallery) // et pour chaque image on crée un lightbox
+        // A l'appel de Lightbox.init() on initialise une nouvelle lightbox avec
+        // en paramètre l'url (recup la src de la cible de l'event déclancheur de la lightbox c'est à dire l'image .slideshow
+        // et les images ayant la class .slidesshow
+        new Lightbox(e.currentTarget.getAttribute('src'), gallery)
       }))
     }
 
+    /**
+     * on construit le DOM a partir de l'url de l'image passé en parametre et des chemins des images (src) de la lightbox
+     * @param {string} url Image actuellement affichée
+     * @param {string[]} images Chemins des images de la lightbox
+     */
     constructor (url, images) {
-      // on construit le DOM a partir de l'url de l'image passé en parametre
-      // et des chemins des images de la lightbox
       this.element = this.buildDOM(url)
-      this.images = images // o nstock le 2nd parametre
+      this.images = images // [L'ensemble des images]
       this.loadImage(url) // charge l'image à mettre dans la lightbox
       this.onKeyUp = this.onKeyUp.bind(this) // on défini le this... par avance pour pas bind partout
       document.body.appendChild(this.element) // on ajoute la lightbox dans le html
       document.addEventListener('keyup', this.onKeyUp) // on ecoute le clavier
     }
 
-    // méthode qui injecte le loader, charge une image et qd l'img est chargé enlève le loader
+    /**
+     * méthode qui charge une image
+     * @param {string} url URL de l'image
+     */
     loadImage (url) {
       this.url = url
-      const image = new Image() // on crée une image
+      const image = new Image()
       const container = this.element.querySelector('.lightbox__container')
       container.innerHTML = '' // pour que les images ne s'accumulent pas on clean container
       container.appendChild(image) // puis on ajoute l'image de l'url
+      console.log(container)
+      console.log('demaracation')
+      console.log(container.appendChild(image))
       image.src = url // on donne en src de l'image l'url
     }
 
-    // Navigation clavier
+    /**
+     * Gère la navigation au clavier
+     * @param {string} e la touche dont on veut programmer l'execution
+     */
     onKeyUp (e) {
       if (e.key === 'Escape') { // si la clé pressé est echap
         this.close(e)
@@ -228,20 +243,23 @@ function photoPagebuilder () {
       }
     }
 
-    // ferme carrousel
-    close (e) { // prend un event (souris ou clavier) en param
+    /**
+     * Ferme le carrousel
+     * @param {event} e un evenement de pointage (issu de la souris ou du clavier)
+     */
+    close (e) {
       e.preventDefault()
       this.element.classList.add('fadeOut')
-      window.setTimeout(() => {
-        // this.element.remove() // this.element.parentElement.removeChild(this.element)
-        this.element.innerHTML = ''
-        this.element.classList.remove('fadeOut', 'lightbox')
-      }, 500)
+      this.element.innerHTML = ''
+      this.element.classList.remove('fadeOut', 'lightbox')
       document.removeEventListener('keyup', this.onKeyUp) // on supprime l'event
     }
 
-    // Image suivante
-    next (e) { // prend un event (souris ou clavier) en param
+    /**
+     * Affiche l'image suivante
+     * @param {event} e un evenement de pointage (issu de la souris ou du clavier)
+     */
+    next (e) {
       e.preventDefault()
       let i = this.images.findIndex(image => image === this.url) // recup la position de l'image actuel
       if (i === this.images.length - 1) { // si on est à la dernière image ...
@@ -250,8 +268,11 @@ function photoPagebuilder () {
       this.loadImage(this.images[i + 1]) // on incrémente pour aller à la suivante
     }
 
-    // image précédente
-    prev (e) { // prend un event (souris ou clavier) en param
+    /**
+     * Affiche l'image précédente
+     * @param {event} e un evenement de pointage (issu de la souris ou du clavier)
+     */
+    prev (e) {
       e.preventDefault()
       let i = this.images.findIndex(image => image === this.url)
       if (i === 0) { // si on est à la 1er img
@@ -260,17 +281,20 @@ function photoPagebuilder () {
       this.loadImage(this.images[i - 1]) // on décrémente
     }
 
-    // Injecte le HTML
-    // recup en entrée la src d'image et retoune un element html
-    // Lors du clic nous allons construire la structure HTML de notre lightbox
-    // et greffer les différents comportements.
+    /**
+     * Injecte le carrousel dans le dom
+     * @param {string} url le chemin d'accès / la src d'une image
+     * @returns {html} retourne un élement html
+     */
     buildDOM (url) {
       const dom = document.getElementById('lightbox--receptacle')
       dom.classList.add('lightbox')
+      // nous allons construire la structure HTML de notre lightbox ...
       dom.innerHTML = `<button class="lightbox__close"></button>
         <button class="lightbox__next">Suivant</button>
         <button class="lightbox__prev">Précédent</button>
         <div class="lightbox__container"></div>`
+      // ... et greffer les différents comportements.
       dom.querySelector('.lightbox__close').addEventListener('click', this.close.bind(this))
       // On bind this pour que this à l'intérieur du close fasse reference à l'instance de lightbox
       // et non pas à l'élément sur lequel on vient de clicker
@@ -278,6 +302,6 @@ function photoPagebuilder () {
       dom.querySelector('.lightbox__prev').addEventListener('click', this.prev.bind(this))
       return dom
     }
-    // initialise une new lightbox
-  } Lightbox.init()
+  }
+  Lightbox.init()
 }

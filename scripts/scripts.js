@@ -41,6 +41,8 @@ function getDatas (data) {
   datas.push(data)
 }
 
+// TODO Faire le trie par titre
+
 // TODO Dropdown menu a faire
 //      - css a faire
 
@@ -54,10 +56,8 @@ function getDatas (data) {
 //    photo gallery bug
 //    photo gallery espacement like et prix
 
-// TODO NAMING DU JS et CSS plus propre => BEM
-// TODO séparer ficheirs JS faire des class ? => WEBPACK derniere video Grafiakrt
+// TODO NAMING du CSS plus propre => BEM
 // TODO inclusvité ARIA ...
 // TODO Mise en page / thumnaisl photograpeh index.html
-// TODO commenter
 
 // TODO MENTORAT : Check code propre

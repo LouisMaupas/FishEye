@@ -22,12 +22,12 @@ p {
     font-size: 10px;
     line-height: 13px;
     color: black;
-    & > .paragraphe-title {
+    & > .paragraph-title {
         color: $color-primary;
         font-size: 13px;
         line-height: 17px;
     }
-    & > .paragraphe-price {
+    & > .paragraph-price {
         color: $color-typo-price;
         font-size: 9px;
     }

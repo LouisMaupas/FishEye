@@ -43,12 +43,14 @@ function getDatas (data) {
 
 // TODO Faire le trie par titre
 
+// TODO class static init()
+
 // TODO Dropdown menu a faire
 //      - css a faire
 
 // TODO VERSION MOBILE
 //  - Page photographe
-//  - pagge contact + btn contactez moi sur la page modal contactr
+//  - page contact + btn contactez moi sur la page modal contactr
 //  - btn contactez moi bug
 
 // TODO mise en page

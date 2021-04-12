@@ -11,21 +11,22 @@
 </head>
 <body>
     <div class="container">
-        <a href="#" class="invisible-link">Passer au contenu</a>
+        <a href="http://127.0.0.1:5501/index.html" class="invisible-link">Passer au contenu</a>
         <header id="header-main">
             <a aria-current=”page” href="index.html">
-                <img role=”banner” src="./public/img/logo/logo.png" alt="Fisheye Home page">
+                <img role=”banner” src="./public/img/logo/logo.png" alt="Fisheye page d'accueil">
             </a>
             <nav role="search">
                 <ul>
-                    <li id="portrait" class="nav-link link"><a href="#">#Portrait</a></li>
-                    <li id="art" class="nav-link link"><a href="#">#Art</a></li>
-                    <li id="fashion" class="nav-link link"><a href="#">#Fashion</a></li>
-                    <li id="architecture" class="nav-link link"><a href="#">#Architecture</a></li>
-                    <li id="travel" class="nav-link link"><a href="#">#Travel</a></li>
-                    <li id="sport" class="nav-link link"><a href="#">#Sport</a></li>
-                    <li id="animals" class="nav-link link"><a href="#">#Animals</a></li>
-                    <li id="events" class="nav-link link"><a href="#">#Events</a></li>
+                    <li id="portrait" class="portrait nav-link link"><a href="#">#Portrait</a></li>
+                    <span></span>
+                    <li class="art nav-link link"><a href="#">#Art</a></li>
+                    <li class="fashion nav-link link"><a href="#">#Fashion</a></li>
+                    <li class="architecture nav-link link"><a href="#">#Architecture</a></li>
+                    <li class="travel nav-link link"><a href="#">#Travel</a></li>
+                    <li class="sport nav-link link"><a href="#">#Sport</a></li>
+                    <li class="animals nav-link link"><a href="#">#Animals</a></li>
+                    <li class="events nav-link link"><a href="#">#Events</a></li>
                 </ul>
             </nav>
             <h1>Nos photographes</h1>
@@ -33,7 +34,7 @@
         <main class="main">
             <article class="grid-item portrait events travel animals">
                 <a href="./html/photo.html?photo=0">
-                        <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MimiKeel.jpg" alt="">
+                        <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MimiKeel.jpg" alt="Photo de Mimi - lien vers sa page">
                     <h2>Mimi Keel</h2>
                 </a>
                 <p>
@@ -42,15 +43,15 @@
                     <span class="paragraph-price">400€/jour</span>
                 </p>    
                 <div>
-                    <a href="#"><span class="link">#portrait</span></a>
-                    <a href="#"><span class="link">#events</span></a>
-                    <a href="#"><span class="link">#travel</span></a>
-                    <a href="#"><span class="link">#animals</span></a>
+                    <a href="#"><span class="portrait link nav-link">#Portrait</span></a>
+                    <a href="#"><span class="events link nav-link">#Events</span></a>
+                    <a href="#"><span class="travel link nav-link">#Travel</span></a>
+                    <a href="#"><span class="animals link nav-link">#Animals</span></a>
                 </div>
             </article>
             <article class="grid-item sport architecture">
                 <a href="./html/photo.html?photo=1">
-                     <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/Ellie-RoseWilkens.jpg" alt="">
+                     <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/Ellie-RoseWilkens.jpg" alt="Photo de Ellie-Rose - lien vers sa page">
                      <h2>Ellie-Rose Wilkens</h2>
                 </a>
                 <p>
@@ -60,13 +61,13 @@
                     
                 </p>
                 <div>
-                    <span class="link">#sport</span>
-                    <span class="link">#architecture</span>
+                    <a href="#"><span class="sport link nav-link">#sport</span></a>
+                    <a href="#"><span class="architecture link nav-link">#architecture</span></a>
                 </div>
             </article>
             <article class="grid-item art fashion events">
                 <a href="./html/photo.html?photo=2">
-                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/TracyGalindo.jpg" alt="">
+                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/TracyGalindo.jpg" alt="Photo de Tracy - lien vers sa page">
                     <h2>Tracy Galindo</h2>
                 </a>
                 <p>
@@ -76,14 +77,14 @@
                     
                 </p>
                 <div>
-                    <span class="link">#art</span>
-                    <span class="link">#fashion</span>
-                    <span class="link">#events</span>
+                    <a href="#"><span class="art link nav-link">#art</span></a>
+                    <a href="#"><span class="fashion link nav-link">#fashion</span></a>
+                    <a href="#"><span class="events link nav-link">#events</span></a>
                 </div>
             </article>
             <article class="grid-item travel portrait">
                 <a href="./html/photo.html?photo=3">
-                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/NabeelBradford.jpg" alt="">
+                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/NabeelBradford.jpg" alt="Photo de Nabeel - lien vers sa page">
                     <h2>Nabeel Bradford</h2>
                 </a>
                 <p>
@@ -93,13 +94,13 @@
                     
                 </p>
                 <div>
-                    <span class="link">#travel</span>
-                    <span class="link">#portrait</span>
+                    <a href="#"><span class="travel link nav-link">#travel</span></a>
+                    <a href="#"><span class="portrait link nav-link">#portrait</span></a>
                 </div>
             </article>
             <article class="grid-item sport fashion events animals">
                 <a href="./html/photo.html?photo=4">
-                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/RhodeDubois.jpg" alt="">
+                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/RhodeDubois.jpg" alt="Photo de Rhode - lien vers sa page">
                     <h2>Rhode Dubois</h2>
                 </a>
                 <p>
@@ -109,26 +110,25 @@
                     
                 </p>
                 <div>
-                    <span class="link">#sport</span>
-                    <span class="link">#fashion</span>
-                    <span class="link">#events</span>
-                    <span class="link">#animals</span>
+                    <a href="#"><span class="sport link nav-link">#sport</span></a>
+                    <a href="#"><span class="fashion link nav-link">#fashion</span></a>
+                    <a href="#"><span class="events link nav-link">#events</span></a>
+                    <a href="#"><span class="animals link nav-link">#animals</span></a>
                 </div>
             </article>
             <article class="grid-item events architecture">
                 <a href="./html/photo.html?photo=5">
-                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MarcelNikolic.jpg" alt="">
+                    <img class="picture-profil" src="./public/img/SamplePhotos/PhotographersIdPhotos/MarcelNikolic.jpg" alt="Photo de Marcel - lien vers sa page">
                     <h2>Marcel Nikolic</h2>
                 </a>
                 <p>
                     <span class="paragraph-title">Berlin, Germany</span><br/>
                     Toujours à la recherche de LA photo<br/>
                     <span class="paragraph-price">300€/jour</span>
-                    
                 </p>
                 <div>
-                    <span class="link">#events</span>
-                    <span class="link">#architecture</span>
+                    <a href="#"><span class="events link nav-link">#events</span></a>
+                    <a href="#"><span class="architecture link nav-link">#architecture</span></a>
                 </div>
             </article>
         </main>

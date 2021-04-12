@@ -54,12 +54,14 @@ function getDatas (data) {
 //  - btn contactez moi bug
 
 // TODO mise en page
+//    Thumbnails
 //    contactez moi modal mise en page a faire
 //    photo gallery bug
 //    photo gallery espacement like et prix
 
-// TODO NAMING du CSS plus propre => BEM
-// TODO inclusvité ARIA ...
-// TODO Mise en page / thumnaisl photograpeh index.html
+// TODO inclusvité ARIA
+//          Invisible sauf si interaction. Apparait quand l’utilisateur descend sur la page. Redirige vers le contenu de main.
+//          “Tag” (span uniquement pour screen readers pour chaque tag) ???
+//          
 
 // TODO MENTORAT : Check code propre

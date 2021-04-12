@@ -10,7 +10,7 @@ function homePagebuilder () {
   for (let i = 0; i < tags.length; i++) {
     tags[i].addEventListener('click', function (e) {
       e.preventDefault()
-      let tag = tags[i].id
+      let tag = tags[i].classList[0]
       tag = tag.toString()
       for (let i = 0; i < photographers.length; i++) {
         if (photographers[i].classList.contains(tag)) {

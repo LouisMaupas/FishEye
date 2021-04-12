@@ -19,16 +19,20 @@
             text-align: center;
             & > li {
                 display: inline; 
-                & > a {
-                    color: $color-primary;
-                }
-                &:hover > a {
-                    color: white;
-                }
             }
         }
     } 
 }
+
+.nav-link {
+    & > a {
+        color: $color-primary;
+    }
+    &:hover > a {
+        color: white;
+    }
+}
+
 
  .main {
     margin: 0 auto;

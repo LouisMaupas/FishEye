@@ -41,27 +41,15 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO Faire le trie par titre
+// TODO Mardi :  Faire le trie par titre
 
-// TODO class static init()
+// TODO PAGE ACCUEIl
+// - Bouton "passer au contenu" : s'affiche pas + pas compris son utilité (Invisible sauf si interaction. Apparait quand l’utilisateur descend sur la page. Redirige vers le contenu de main.)
+// - Pas compris ce que ça veut dire et si j'ai bien fait : “Tag” (span uniquement pour screen readers pour chaque tag) ???
 
-// TODO Dropdown menu a faire
-//      - css a faire
+// TODO PAGE PHOTOGRAPHE
+// - Dropdown menu a faire
 
 // TODO VERSION MOBILE
-//  - Page photographe
-//  - page contact + btn contactez moi sur la page modal contactr
-//  - btn contactez moi bug
-
-// TODO mise en page
-//    Thumbnails
-//    contactez moi modal mise en page a faire
-//    photo gallery bug
-//    photo gallery espacement like et prix
-
-// TODO inclusvité ARIA
-//          Invisible sauf si interaction. Apparait quand l’utilisateur descend sur la page. Redirige vers le contenu de main.
-//          “Tag” (span uniquement pour screen readers pour chaque tag) ???
-//          
-
-// TODO MENTORAT : Check code propre
+//  - page contact : btn "contactez moi" bug (est display alors que devrait être none)
+//  - Page photographe : Header float marche pas

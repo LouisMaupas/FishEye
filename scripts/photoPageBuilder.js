@@ -180,9 +180,11 @@ function photoPagebuilder () {
   for (const media of mediasFromUrl) {
     counter += media.likes
   }
-  tariff.insertAdjacentHTML('afterbegin', `<span id="tariff-likes">${counter}</span>
-  <span><i class="fas fa-heart"></i></span>
-  <span id="tariff-price">${photographerFromUrl.price}</span>€/jour`)
+  tariff.insertAdjacentHTML('afterbegin', `<div>
+    <span id="tariff-likes">${counter}</span>
+    <span><i class="fas fa-heart"></i></span>
+  </div>
+  <div><span id="tariff-price">${photographerFromUrl.price}</span>€/jour</div>`)
 
   /** Le carrousel / lightbox */
   class Lightbox {
@@ -290,10 +292,10 @@ function photoPagebuilder () {
       const dom = document.getElementById('lightbox--receptacle')
       dom.classList.add('lightbox')
       // nous allons construire la structure HTML de notre lightbox ...
-      dom.innerHTML = `<button class="lightbox__close"></button>
+      dom.innerHTML = `<button class="lightbox__close">fermer</button>
         <button class="lightbox__next">Suivant</button>
         <button class="lightbox__prev">Précédent</button>
-        <div class="lightbox__container"></div>`
+        <div class="lightbox__container" aria-label=”image closeup view”></div>`
       // ... et greffer les différents comportements.
       dom.querySelector('.lightbox__close').addEventListener('click', this.close.bind(this))
       // On bind this pour que this à l'intérieur du close fasse reference à l'instance de lightbox

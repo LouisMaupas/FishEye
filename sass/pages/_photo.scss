@@ -3,6 +3,45 @@
         max-width: 1555px;
         margin: 2em auto;
     }
+    .artist-infos {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 1em 0 1em 1em;
+            & > h1 {
+                font-size: 64px;
+                color: $color-secondary;
+                margin-top: 0.5em;
+                margin-bottom: 0.2em;
+            }
+            &__title {
+                color: $color-primary;
+                font-size: 24px;
+            }
+            &__txt {
+                color: $color-fourth;
+                font-size: 18px;
+            }
+            & nav {
+                margin: 1em 0;
+                a {
+                    margin: 3px;
+                    span {
+                        font-size: 18px; 
+                    }
+                }
+            }
+    
+        &__btn{
+            margin-top: 1em;
+            margin-left: 1em;
+            & a {
+                color: white;
+            }
+        }
+        &__pic{
+            margin-right: 1em;
+        }
+    }
     #contact-me {
         display: none;
     }
@@ -10,46 +49,6 @@
 
 .header {
     background-color: $color-third;
-}
-
-.artist-infos {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding: 1em 0 1em 1em;
-        & > h1 {
-            font-size: 64px;
-            color: $color-secondary;
-            margin-top: 0.5em;
-            margin-bottom: 0.2em;
-        }
-        &__title {
-            color: $color-primary;
-            font-size: 24px;
-        }
-        &__txt {
-            color: $color-fourth;
-            font-size: 18px;
-        }
-        & nav {
-            margin: 1em 0;
-            a {
-                margin: 3px;
-                span {
-                    font-size: 18px; 
-                }
-            }
-        }
-
-    &__btn{
-        margin-top: 1em;
-        margin-left: 1em;
-        & a {
-            color: white;
-        }
-    }
-    &__pic{
-        margin-right: 1em;
-    }
 }
 
 .artist-pictures {
@@ -117,6 +116,9 @@
 }
 
 #tariff {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
     background-color: $color-secondary-lighter;
     font-weight: 500;
     font-size: 24px;
@@ -127,6 +129,9 @@
     position: fixed;
     bottom: 0;
     right: 5%;
+    & {
+
+    }
 }
 
 select {
@@ -157,14 +162,18 @@ select {
 }
 
 @media screen and (max-width: 700px) {
-    .photo-container{
-        width: auto;
+    body {
+        width: 100%;
         margin: 1em;
+    }
+    .header {
+        width: 100%;
     }
     .artist-infos {
     margin: auto;
     padding: 0;
         &__details{
+            width: 100%;
             & > h1 {
                 font-size: 36px;
                 color: $color-secondary;
@@ -177,19 +186,23 @@ select {
                 color: $color-fourth;
                 font-size: 13px;
             }
-            & nav a span {
-               font-size: 18px; 
+            & #nav {
+                width: 200px;
+                a span {
+                font-size: 12px; 
+                }
             }
         }
         &__btn{
             display: none;
         }
-        &__pic{
-            margin-right: 1em;
-            & img {
-                width: 125px;
-                height: auto;
-            }
+    }
+
+    .artist-infos__pic {
+        float: right;
+        & img {
+            width: 125px;
+            height: auto;
         }
     }
 
@@ -204,15 +217,19 @@ select {
         } 
     }
 
+    #bloc-dropdown {
+        display: none;
+    }
+
     #contact-me {
         background-color: $color-primary;
         position: fixed;
         bottom: 5%;
         left: 25%;
-        z-index: 1000;
+        z-index: 10;
         padding: 0.5em;
         height: auto;
-        padding: none;
+        padding: 0.5em;
         border-radius: 5px;
         & a {
             color: white;

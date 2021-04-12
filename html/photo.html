@@ -36,17 +36,18 @@
             </div> 
         </section>
         <div class="artist-pictures">
-            <span class="artist-pictures__title">Trier par</span>
-            <!---->
-            <div class="artist-pictures__dropdown">
-                <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn" role="button" aria-haspopup=”listbox”, aria-expanded>
-                    <span id="change-menu-name"><div class="dropdown-underline">Titre</div></span>
-                    <i class="fas fa-angle-up"></i>
-                </div >
-                <div id="dropdown" class="dropdown-content">
-                  <a id="popularity" href="#"  role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Popularité</div></a>
-                  <a id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Date</div></a>
-                  <a id="title" class="d-none" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Titre</div></a>
+            <div id="bloc-dropdown">
+                <span class="artist-pictures__title">Trier par</span>
+                <div class="artist-pictures__dropdown">
+                    <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn" role="button" aria-haspopup=”listbox”, aria-expanded>
+                        <div id="change-menu-name"><span class="dropdown-underline">Titre</div></span>
+                        <i class="fas fa-angle-up"></i>
+                    </div >
+                    <div id="dropdown" class="dropdown-content">
+                      <a id="popularity" href="#"  role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Popularité</div></a>
+                      <a id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Date</div></a>
+                      <a id="title" class="d-none" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby><div class="dropdown-underline">Titre</div></a>
+                    </div>
                 </div>
             </div>
             <!---->
@@ -56,7 +57,7 @@
         </div>
     </div>
         <!--MODAL-->
-        <aside id="modal" class="modal content display-none" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal">
+        <div id="modal" class="modal content display-none" aria-hidden="true" role="dialog" aria-modal="false">
             <div class="modal-wrapper js-modal-stop">
                 <div class="modal-header df jc-sb">
                     <span>Contactez-moi</span>
@@ -66,9 +67,9 @@
                 <div class="modal-body">
                     <form 
                     id="modal-form"
-                    name=""
-                    action=""
-                    method=""
+                    name="modal-form"
+                    action="#"
+                    method="POST"
                     >
                         <div class="formData">
                             <label for="first" >Prénom</label><br>
@@ -82,7 +83,7 @@
                             /><br>
                         </div>
                         <div class="formData">
-                            <label for=last">Nom</label><br>
+                            <label for="last">Nom</label><br>
                             <input
                             class="text-control"
                             type="text"
@@ -102,15 +103,15 @@
                             /><br>
                         </div>
                         <div class="formData">
-                            <label for="text">Votre message</label><br>
-                            <textarea form="modal-form" id="text" name="text" rows="5" cols="33"></textarea>
+                            <label for="modal-text">Votre message</label><br>
+                            <textarea form="modal-form" id="modal-text" name="modal-text" rows="5" cols="33"></textarea>
                             <br>
                         </div>
                         <button class="button button--static">Envoyer</button>
                     </form>
                 </div>
             </div>
-        </aside>
+        </div>
         <!--lightbox-->
         <div id="lightbox--receptacle">
         </div>

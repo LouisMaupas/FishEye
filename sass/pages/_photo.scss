@@ -107,8 +107,19 @@
     } 
 }
 
+.drop-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .dropdown-underline {
- border-bottom: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+}
+
+#dropdow:nth-child(3) {
+    background-color: #000000;
 }
 
 .show {
@@ -199,10 +210,10 @@ select {
     }
 
     .artist-infos__pic {
-        float: right;
         & img {
             width: 125px;
-            height: auto;
+            height: 125px;
+            box-shadow: 7px 7px 13px -3px rgba(0,0,0,0.8);
         }
     }
 
@@ -215,6 +226,10 @@ select {
             display: flex;
             flex-direction: column;
         } 
+    }
+
+    figcaption {
+        max-width: 350px;
     }
 
     #bloc-dropdown {

@@ -48,6 +48,3 @@ function getDatas (data) {
 // TODO PAGE PHOTOGRAPHE
 // - Dropdown menu a faire
 // => Jouer avec padding bottom (witdh popluarité largeur wirht 100%) attention au <a> utilise lastchild
-
-// TODO VERSION MOBILE
-//  - Page photographe : Header float marche pas

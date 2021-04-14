@@ -31,6 +31,12 @@
     &:hover > a {
         color: white;
     }
+    & > span > a {
+        color: $color-primary;
+    }
+    &:hover > span > a {
+        color: white;
+    }
 }
 
 

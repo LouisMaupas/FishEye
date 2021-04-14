@@ -41,15 +41,13 @@ function getDatas (data) {
   datas.push(data)
 }
 
-// TODO Mardi :  Faire le trie par titre
-
+//
 // TODO PAGE ACCUEIl
-// - Bouton "passer au contenu" : s'affiche pas + pas compris son utilité (Invisible sauf si interaction. Apparait quand l’utilisateur descend sur la page. Redirige vers le contenu de main.)
-// - Pas compris ce que ça veut dire et si j'ai bien fait : “Tag” (span uniquement pour screen readers pour chaque tag) ???
+// - Bouton "passer au contenu"
 
 // TODO PAGE PHOTOGRAPHE
 // - Dropdown menu a faire
+// => Jouer avec padding bottom (witdh popluarité largeur wirht 100%) attention au <a> utilise lastchild
 
 // TODO VERSION MOBILE
-//  - page contact : btn "contactez moi" bug (est display alors que devrait être none)
 //  - Page photographe : Header float marche pas

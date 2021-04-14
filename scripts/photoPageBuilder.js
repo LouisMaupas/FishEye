@@ -8,7 +8,12 @@ function photoPagebuilder () {
     console.log('Ce photpgraphe n\'existe pas')
   } else {
     photographerFromUrl = photographers[index]
-    mediasFromUrl = medias[index]
+    mediasFromUrl = medias[index].map(media => {
+      media.name = media.image ? media.image : media.video
+      media.name = media.name.replace('.jpg', '').replace('.mp4', '').replace(/_/g, ' ')
+      return media;
+    })
+    console.log(mediasFromUrl)
   }
 
   // On recupère les élements du DOM ...
@@ -69,13 +74,23 @@ function photoPagebuilder () {
    */
   function compareFunction (property) {
     return function (a, b) {
+      
       if (property === 'title') {
-        // if (mediasFromUrl.hasOwnProperty('image'))
+        if (mediasFromUrl.hasOwnProperty('image')) { // mediasFromUrl qui a appellé
+          property = 'image'
+        } else {
+          property = 'video'
+        }
+        return (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
       }
+      
       if (property === 'date') {
-        return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
+        const result = (new Date(a.date) - new Date(b.date))
+        return result
       }
-      const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+      // const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
+      const result = (a[property] - b[property])
+      console.log('* ' + result)
       return result
     }
   }
@@ -86,7 +101,10 @@ function photoPagebuilder () {
     dropDate.classList.add('d-none')
     dropTitle.classList.remove('d-none')
     dropPopularity.classList.remove('d-none')
+    console.log(mediasFromUrl)
     mediasFromUrl.sort(compareFunction('date'))
+    console.log(mediasFromUrl)
+
     diaporama()
     Lightbox.init()
     Like.init()
@@ -225,9 +243,6 @@ function photoPagebuilder () {
       const container = this.element.querySelector('.lightbox__container')
       container.innerHTML = '' // pour que les images ne s'accumulent pas on clean container
       container.appendChild(image) // puis on ajoute l'image de l'url
-      console.log(container)
-      console.log('demaracation')
-      console.log(container.appendChild(image))
       image.src = url // on donne en src de l'image l'url
     }
 

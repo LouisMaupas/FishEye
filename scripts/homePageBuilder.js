@@ -39,8 +39,10 @@ function homePagebuilder () {
 }
 
 /**
- * 
+ * Fais apparaitre le bouton "passer au contenu" au scroll
  */
-// - Bouton "passer au contenu" : juste le faire apparaitre quand on a dépassé x pixels
-// =>  ecoute scrool opset du top faire comme les petites fleches pour remonter la page
 let anchorUp = document.getElementById('anchor-up')
+window.addEventListener('scroll', () => {
+  console.log(anchorUp)
+  anchorUp.classList.remove('d-none')
+})

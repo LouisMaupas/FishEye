@@ -19,7 +19,8 @@
 }
 
 .invisible-link {
-    visibility: hidden;
+    position: fixed;
+    top: 5px;
     box-sizing: border-box;
     background-color: $color-secondary-lighter;
     line-height: 23px;
@@ -31,13 +32,4 @@
     border: none;
     text-decoration: none;
     color: black;
-    &:focus {
-        visibility: visible;
-    }
-    &:hover {
-        visibility: visible;
-    }
-    &:active {
-        visibility: visible;
-    }
 }

@@ -36,6 +36,8 @@
             </div> 
         </section>
         <div class="artist-pictures">
+            <!--DROPDOWN-->
+            <!--
             <div id="bloc-dropdown">
                 <span class="artist-pictures__title">Trier par</span>
                 <div class="artist-pictures__dropdown">
@@ -48,10 +50,10 @@
                         </div>
                     </div >
                     <div id="dropdown" class="dropdown-content">
-                      <a id="popularity" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
+                      <a class="drop-body" id="popularity" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
                           <div class="dropdown-underline">Popularité</div>
                         </a>
-                      <a id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
+                      <a class="drop-body" id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
                           <div class="dropdown-underline">Date</div>
                         </a>
                       <a id="title" class="d-none" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
@@ -60,7 +62,38 @@
                     </div>
                 </div>
             </div>
-            <!---->
+            -->
+            <div id="dropdown" class="df">
+                <label class="dropdown__label">
+                    Trier par
+                </label>
+                <div class="dropdown__menu">
+                    <button id="dropdown__header">
+                        <div id="dropdown__title" class="dropdown__li--underline df jc-sb">
+                            Popularité
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                    </button >
+                    <div id="dropdown__body" class="d-none">
+                        <div class="dropdown__li">
+                            <div id="date" class="dropdown__li--underline">
+                                Date
+                            </div>
+                        </div>
+                        <div class="dropdown__li">
+                            <div id="title" class="dropdown__li--underline">
+                                Titre
+                            </div>
+                        </div>
+                        <div class="dropdown__li d-none">
+                            <div id="popularity" class="dropdown__li--underline">
+                                Popularité
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!--DROPDOWN FIN-->
             <div id="pictures" class="artist-pictures__main">
                 <!--Photographe's pictures-->
             </div>    

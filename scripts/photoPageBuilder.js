@@ -11,7 +11,7 @@ function photoPagebuilder () {
     mediasFromUrl = medias[index].map(media => {
       media.name = media.image ? media.image : media.video
       media.name = media.name.replace('.jpg', '').replace('.mp4', '').replace(/_/g, ' ')
-      return media;
+      return media
     })
     console.log(mediasFromUrl)
   }
@@ -26,13 +26,25 @@ function photoPagebuilder () {
   const nameModal = document.getElementById('name-modal')
   const nav = document.getElementById('nav')
   const pictures = document.getElementById('pictures')
-  // ... pour le menu dépliant de tri
+  // ... pour le menu dépliant de tri // TODO
+  /*
   const dropdown = document.getElementById('dropdown-btn')
   const dropPopularity = document.getElementById('popularity')
   const dropTitle = document.getElementById('title')
   const dropDate = document.getElementById('date')
   const dropdownContent = document.getElementById('dropdown')
-  const changeMyMenuName = document.getElementById('change-menu-name')
+  const changeMyMenuName = document.getElementById('change-menu-name') // TODO
+  */
+// TODO
+  const dropPopularity = document.getElementById('popularity')
+  const dropTitle = document.getElementById('title')
+  const dropDate = document.getElementById('date')
+  const dropdown = document.getElementById('dropdown__header')
+  const dropList = document.querySelectorAll('.dropdown__li--underline')
+  const dropdownContent = document.getElementById('dropdown__body')
+  const dropTitleIs = document.getElementById('dropdown__title')
+// TODO
+
   // ... pour le bloc du TJM
   const tariff = document.getElementById('tariff')
 
@@ -59,13 +71,60 @@ function photoPagebuilder () {
   }
   diaporama()
 
-  /** Affiche / déplie le menu de tri et change son titre */
+  /** Affiche / déplie le menu de tri et change son titre */ // TODO
   dropdown.addEventListener('click', function () {
-    dropdownContent.classList.toggle('show')
+    dropdownContent.classList.toggle('d-none')
   })
-  let changeMyMenu = function (name) {
-    changeMyMenuName.innerHTML = name
+  const changeTheTitleBy = function (name) {
+    dropTitleIs.innerHTML = name
   }
+
+  /* */
+  dropList.forEach(element => {
+    element.addEventListener('click', function (ev) {
+      ev.preventDefault()
+      const clicked = ev.path[0].textContent
+      console.log(clicked)
+      switch (clicked) {
+        case 'Date':
+          console.log('switch : ' + clicked)
+          changeTheTitleBy('Date')
+          dropDate.classList.add('d-none')
+          dropTitle.classList.remove('d-none')
+          dropPopularity.classList.remove('d-none')
+          mediasFromUrl.sort(compareFunction('date'))
+          break
+        case 'Titre':
+          changeTheTitleBy('Titre')
+          dropTitle.classList.add('d-none')
+          dropDate.classList.remove('d-none')
+          dropPopularity.classList.remove('d-none')
+          mediasFromUrl.sort(compareFunction('title'))
+          console.log('c titre')
+          break
+        case 'Popularité':
+          changeTheTitleBy('Popularité')
+          dropPopularity.classList.add('d-none')
+          dropDate.classList.remove('d-none')
+          dropTitle.classList.remove('d-none')
+          mediasFromUrl.sort(compareFunction('likes'))
+          console.log('c popularité')
+          break
+        default:
+          console.log('switch default')
+      }
+    })
+  })
+
+  /*
+  dropList.addEventListener('click', function () {
+    dropList.forEach(e => {
+      const textContent = e.textContent
+      console.log(textContent)
+    })
+  })*/
+
+  /**/ 
 
   /**
    * Tri le diaporama d'image par date, popularité ou titre
@@ -88,13 +147,14 @@ function photoPagebuilder () {
         const result = (new Date(a.date) - new Date(b.date))
         return result
       }
-      // const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
       const result = (a[property] - b[property])
       console.log('* ' + result)
       return result
     }
   }
+  // TODO
   /** On lie la fonction de tri à un evenement d'écoute sur la date et ajuste l'affichage */
+  /*
   dropDate.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Date')
@@ -109,7 +169,9 @@ function photoPagebuilder () {
     Lightbox.init()
     Like.init()
   })
+  */
   /** les titres */
+  /*
   dropTitle.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Titre')
@@ -121,7 +183,9 @@ function photoPagebuilder () {
     Lightbox.init()
     Like.init()
   })
+  */
   /** la popularité */
+  /*
   dropPopularity.addEventListener('click', function (e) {
     e.preventDefault()
     changeMyMenu('Popularité')
@@ -133,6 +197,9 @@ function photoPagebuilder () {
     Lightbox.init()
     Like.init()
   })
+  */
+
+
 
   /** Au clic sur le bouton like incrémente le compteur de like */
   class Like {

@@ -128,13 +128,16 @@ margin-bottom: 1em;
 .show {
     display: block!important;
 }*/
-
+/* TODO NE DEPLACER QUE l'INFORMATION AVEC INNER HTML ???? LAISSER LE DESING INTACT ET HCANGTER QUE LE TEXT */
 .dropdown {
     & label {
 
     }
     &__menu {
         & #dropdown__header {
+            border: none;
+            font-size: 16px;
+            font-family: 'DM Sans', sans-serif;
             background-color: $color-primary;
             color: white;
             width: 170px;
@@ -143,6 +146,9 @@ margin-bottom: 1em;
             &:hover {
                 background-color: $color-secondary;
                 cursor: pointer;
+            }
+            & #dropdown__title {
+                padding-top: 20px;
             }
         }
     }
@@ -155,6 +161,7 @@ margin-bottom: 1em;
     color: white;
     width: 170px;
     & .dropdown__li {
+        padding-top: 20px;
         &:hover {
             background-color: $color-secondary;
             cursor: pointer;
@@ -165,6 +172,7 @@ margin-bottom: 1em;
 .dropdown__li--underline {
     border-bottom: 1px solid white;
     width: 150px;
+    padding-bottom: 20px;
 }
 
 #tariff {
@@ -181,9 +189,6 @@ margin-bottom: 1em;
     position: fixed;
     bottom: 0;
     right: 5%;
-    & {
-
-    }
 }
 
 select {

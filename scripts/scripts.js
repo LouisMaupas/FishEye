@@ -41,10 +41,9 @@ function getDatas (data) {
   datas.push(data)
 }
 
-//
-// TODO PAGE ACCUEIl
-// - Bouton "passer au contenu"
-
 // TODO PAGE PHOTOGRAPHE
 // - Dropdown menu a faire
 // => Jouer avec padding bottom (witdh popluarité largeur wirht 100%) attention au <a> utilise lastchild
+
+// TODO
+// - faire les ARIA accesbility tout ça

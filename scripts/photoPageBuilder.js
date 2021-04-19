@@ -158,7 +158,7 @@ function photoPagebuilder () {
           <div class="pictures__title">${imageName}</div>
           <span class="price">${media.price}€</span> 
           <span class="likes">
-            <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart"></i></span>
+            <span class="counter">${NumberOfLikes}</span><span class="like"><i class="fas fa-heart" aria-label="likes"></i></span>
           </span>
       </figcaption>
   </figure>`)

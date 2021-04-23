@@ -11,92 +11,68 @@
     <title>FishEye - PHOTOGRAPHE</title>
 </head>
 <body>
-    <div class="photo-container">
-        <header>
-            <a href="../index.html">
-                <img src="../public/img/logo/logo.png" alt="Fisheye Home Page">
-            </a>
-        </header>
-        <section class="header artist-infos df fd-r jc-sb">
-            <div class="df fd-r">
-                <div class="artist-infos__details">
-                    <h1>Photographe inconnu</h1>
-                    <span id="city" class="artist-infos__title"> Ville,</span>
-                    <span id="country" class="artist-infos__title">Pays</span><br/>
-                    <span id="text" class="artist-infos__txt">Text</span><br/>
-                    <nav id="nav">
-                    </nav>
-                </div>
-                <div class="artist-infos__btn">
-                    <div class="button button--static"><a href="#modal" class="modal-link">Contactez-moi</a></div>
-                </div>
-            </div>
-            <div class="artist-infos__pic">
-                <img id="img" class="picture-profil" src="#" alt="">
-            </div> 
-        </section>
-        <div class="artist-pictures">
-            <!--DROPDOWN-->
-            <!--
-            <div id="bloc-dropdown">
-                <span class="artist-pictures__title">Trier par</span>
-                <div class="artist-pictures__dropdown">
-                    <div id="dropdown-btn" class="artist-pictures__dropdown__dropdown-btn" role="button" aria-haspopup=”listbox”, aria-expanded>
-                        <div class="drop-header dropdown-underline">
-                            <div id="change-menu-name">
-                                <span >Titre</span>
-                            </div>
-                            <i class="fas fa-angle-up"></i>
-                        </div>
-                    </div >
-                    <div id="dropdown" class="dropdown-content">
-                      <a class="drop-body" id="popularity" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
-                          <div class="dropdown-underline">Popularité</div>
-                        </a>
-                      <a class="drop-body" id="date" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
-                          <div class="dropdown-underline">Date</div>
-                        </a>
-                      <a id="title" class="d-none" href="#" role=”listbox”, aria-activedescendant, aria-selected, aria-labelledby>
-                          <div class="dropdown-underline">Titre</div>
-                        </a>
+    <div id="photo-container">
+        <div class="photo-container">
+            <header>
+                <a href="../index.html">
+                    <img src="../public/img/logo/logo.png" alt="Fisheye Home Page">
+                </a>
+            </header>
+            <section class="header artist-infos df fd-r jc-sb">
+                <div class="df fd-r">
+                    <div class="artist-infos__details">
+                        <h1>Photographe inconnu</h1>
+                        <span id="city" class="artist-infos__title"> Ville,</span>
+                        <span id="country" class="artist-infos__title">Pays</span><br/>
+                        <span id="text" class="artist-infos__txt">Text</span><br/>
+                        <nav id="nav">
+                        </nav>
+                    </div>
+                    <div class="artist-infos__btn">
+                        <div class="button button--static"><a href="#modal" class="modal-link">Contactez-moi</a></div>
                     </div>
                 </div>
-            </div>
-            -->
-            <div id="dropdown" class="df">
-                <label class="dropdown__label">
-                    Trier par
-                </label>
-                <div class="dropdown__menu">
-                    <button id="dropdown__header">
-                        <div id="dropdown__title" class="dropdown__li--underline df jc-sb">
-                            Popularité
-                            <i class="fas fa-angle-up"></i>
-                        </div>
-                    </button >
-                    <div id="dropdown__body" class="d-none">
-                        <div class="dropdown__li df jc-c">
-                            <div id="date" class="dropdown__li--underline">
-                                Date
+                <div class="artist-infos__pic">
+                    <img id="img" class="picture-profil" src="#" alt="">
+                </div> 
+            </section>
+            <div class="artist-pictures">
+                <!--DROPDOWN-->
+                <div id="dropdown" class="df ai-c">
+                    <label class="dropdown__label">
+                        Trier par
+                    </label>
+                    <div class="dropdown__menu">
+                        <button id="dropdown__header">
+                            <div class="dropdown__li--underline df jc-sb">
+                                <span id="dropdown__title">Popularité</span>
+                                <i class="fas fa-angle-up"></i>
                             </div>
-                        </div>
-                        <div class="dropdown__li df jc-c">
-                            <div id="title" class="dropdown__li--underline">
-                                Titre
+                        </button >
+                        <div id="dropdown__body" class="d-none">
+                            <div class="dropdown__li df jc-c">
+                                <div id="date" class="dropdown__li--underline">
+                                    Date
+                                </div>
                             </div>
-                        </div>
-                        <div class="dropdown__li df jc-c d-none">
-                            <div id="popularity" class="dropdown__li--underline">
-                                Popularité
+                            <div class="dropdown__li df jc-c">
+                                <div id="title" class="dropdown__li--underline">
+                                    Titre
+                                </div>
+                            </div>
+                            <div class="dropdown__li df jc-c d-none">
+                                <div id="popularity" class="dropdown__li--underline">
+                                    Popularité
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                 <!--DROPDOWN FIN-->
+                <div id="pictures" class="artist-pictures__main">
+                    <!--Photographe's pictures-->
+                </div>    
             </div>
-             <!--DROPDOWN FIN-->
-            <div id="pictures" class="artist-pictures__main">
-                <!--Photographe's pictures-->
-            </div>    
         </div>
     </div>
         <!--MODAL-->
@@ -156,7 +132,7 @@
             </div>
         </div>
         <!--lightbox-->
-        <div id="lightbox--receptacle">
+        <div id="lightbox--receptacle" aria-hidden="true" role="dialog" aria-modal="false">
         </div>
         <!--tarifs-->
         <div id="tariff">

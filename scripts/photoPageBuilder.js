@@ -26,7 +26,7 @@ function photoPagebuilder () {
   const nameModal = document.getElementById('name-modal')
   const nav = document.getElementById('nav')
   const pictures = document.getElementById('pictures')
-  // ... pour le menu dépliant de tri // TODO
+  // ... pour le menu dépliant de tri
   const dropPopularity = document.getElementById('popularity')
   const dropTitle = document.getElementById('title')
   const dropDate = document.getElementById('date')
@@ -68,7 +68,7 @@ function photoPagebuilder () {
     dropTitleIs.innerHTML = name
   }
 
-  /** On lie la fonction de tri à un evenement d'écoute sur la date et ajuste l'affichage */
+  /** On lie la fonction de tri à un evenement d'écoute sur chaque items du dropbpx et ajuste l'affichage */
   dropList.forEach(element => {
     element.addEventListener('click', function (ev) {
       ev.preventDefault()
@@ -81,13 +81,15 @@ function photoPagebuilder () {
           dropTitle.classList.remove('d-none')
           dropPopularity.parentElement.classList.remove('d-none')
           mediasFromUrl.sort(compareFunction('date'))
+          diaporama()
           break
         case 'Titre':
           changeTheTitleBy('Titre')
           dropTitle.classList.add('d-none')
           dropDate.classList.remove('d-none')
           dropPopularity.parentElement.classList.remove('d-none')
-          mediasFromUrl.sort(compareFunction('title'))
+          mediasFromUrl.sort(compareFunction('name'))
+          diaporama()
           break
         case 'Popularité':
           changeTheTitleBy('Popularité')
@@ -95,6 +97,7 @@ function photoPagebuilder () {
           dropDate.classList.remove('d-none')
           dropTitle.classList.remove('d-none')
           mediasFromUrl.sort(compareFunction('likes'))
+          diaporama()
           break
         default:
           console.log('switch default')
@@ -109,19 +112,10 @@ function photoPagebuilder () {
    */
   function compareFunction (property) {
     return function (a, b) {
-      if (property === 'title') {
-        if (mediasFromUrl.hasOwnProperty('image')) { // mediasFromUrl qui a appellé
-          property = 'image'
-        } else {
-          property = 'video'
-        }
-        return (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
-      }
       if (property === 'date') {
-        const result = (new Date(a.date) - new Date(b.date))
-        return result
+        return new Date(a.date) < new Date(b.date) ? -1 : Date(a.date) > new Date(b.date) ? 1 : 0
       }
-      const result = (a[property] - b[property])
+      const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0
       return result
     }
   }
@@ -309,6 +303,7 @@ function photoPagebuilder () {
       // et non pas à l'élément sur lequel on vient de clicker
       dom.querySelector('.lightbox__next').addEventListener('click', this.next.bind(this))
       dom.querySelector('.lightbox__prev').addEventListener('click', this.prev.bind(this))
+      dom.querySelector('.lightbox__next').focus()
       return dom
     }
   }

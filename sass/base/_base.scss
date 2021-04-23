@@ -2,11 +2,14 @@ html, body {
     margin: 0;
 }
 
-body {
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
 .display-none {
     display: none;
 }
+
+@media screen and (min-width: 700px) {
+    body {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+

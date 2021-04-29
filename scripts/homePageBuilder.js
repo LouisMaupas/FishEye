@@ -43,5 +43,7 @@ function homePagebuilder () {
  */
 let anchorUp = document.getElementById('anchor-up')
 window.addEventListener('scroll', () => {
-  anchorUp.classList.remove('d-none')
+  if (anchorUp) {
+    anchorUp.classList.remove('d-none')
+  }
 })

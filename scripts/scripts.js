@@ -7,14 +7,14 @@ const rhode = 925
 const marcel = 195
 
 /** On initialise des tableaux qu'on rempliera avec les différentes datas */
-const datas = []
-const photographers = []
-const medias = []
+let datas = []
+let photographers = []
+let medias = []
 
 // On stock nos URL d'index et de base de données
-// const url = 'http://127.0.0.1:5501/'
-const url = 'https://louismaupas.github.io/FishEye/'
-const urlDatas = new URL('datas.json', url)
+const url = 'http://127.0.0.1:5501/'
+// const url = 'https://louismaupas.github.io/FishEye/'
+const urlDatas = new URL('/datas.json', url)
 
 /** une fonction qui recupère les datas du fichier JSON et quand la promesse est résolu appel différentes fonctions pour faire fonctionner l'application */
 function renderData () {

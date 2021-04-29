@@ -1,4 +1,4 @@
-/** Une fonction retrouve le photographe par son id et stock les médias et les informations du photographe dans 2 variables */
+/** Une fonction qui retrouve le photographe par son id et stock les médias et les informations du photographe dans 2 variables */
 function photoPagebuilder () {
   let photographerFromUrl
   let mediasFromUrl
@@ -13,7 +13,6 @@ function photoPagebuilder () {
       media.name = media.name.replace('.jpg', '').replace('.mp4', '').replace(/_/g, ' ')
       return media
     })
-    console.log(mediasFromUrl)
   }
 
   // On recupère les élements du DOM ...
@@ -73,7 +72,6 @@ function photoPagebuilder () {
     element.addEventListener('click', function (ev) {
       ev.preventDefault()
       const clicked = ev.path[0].textContent
-      console.log(clicked.trim())
       switch (clicked.trim()) {
         case 'Date':
           changeTheTitleBy('Date')
@@ -82,6 +80,8 @@ function photoPagebuilder () {
           dropPopularity.parentElement.classList.remove('d-none')
           mediasFromUrl.sort(compareFunction('date'))
           diaporama()
+          Like.init()
+          Lightbox.init()
           break
         case 'Titre':
           changeTheTitleBy('Titre')
@@ -90,6 +90,8 @@ function photoPagebuilder () {
           dropPopularity.parentElement.classList.remove('d-none')
           mediasFromUrl.sort(compareFunction('name'))
           diaporama()
+          Like.init()
+          Lightbox.init()
           break
         case 'Popularité':
           changeTheTitleBy('Popularité')
@@ -98,6 +100,8 @@ function photoPagebuilder () {
           dropTitle.classList.remove('d-none')
           mediasFromUrl.sort(compareFunction('likes'))
           diaporama()
+          Like.init()
+          Lightbox.init()
           break
         default:
           console.log('switch default')

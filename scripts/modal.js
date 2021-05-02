@@ -91,8 +91,3 @@ window.addEventListener('keydown', function (e) {
     focusInModal(e)
   }
 })
-
-// On peut naviguer avec tab problème : si on reviens en arrière avec shit+tab
-// on focus alors le lien "Ouvrir la boite modale" alors que fenetre modal ouverte
-// 2 solutions : - placer les elements arrière plan en z-index : -1
-// - intercepter la pression sur tabulation et ajouter un comportement manuel

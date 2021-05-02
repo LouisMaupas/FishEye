@@ -66,6 +66,11 @@ function photoPagebuilder () {
   const changeTheTitleBy = function (name) {
     dropTitleIs.innerHTML = name
   }
+  window.onclick = function hideDropdown (ev) {
+    if (!ev.target.classList.contains('dropdown__li--underline')) {
+      dropdownContent.classList.add('d-none')
+    }
+  }
 
   /** On lie la fonction de tri à un evenement d'écoute sur chaque items du dropbpx et ajuste l'affichage */
   dropList.forEach(element => {

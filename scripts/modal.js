@@ -1,6 +1,6 @@
 let modal = null // par défaut modal est null cf 1er condition de closeModal
 // tous les elements selectionnalbes dans la boite modal
-const focusableSelector = 'button, a, input, textarea, div'
+const focusableSelector = 'button, a, input, textarea'
 // on sotckera les elements focusables dans un tableau quand modal est ouvert
 let focusables = []
 // Pour enregistrer la ou était le focus avant d'ouvrir la modale

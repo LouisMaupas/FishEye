@@ -9,7 +9,7 @@ let previouslyFocusedElement = null
 const openModal = function (e) {
   e.preventDefault()
   // element cible du lien
-  modal = document.querySelector(e.target.getAttribute('href'))
+  modal = document.querySelector(e.currentTarget.getAttribute('href'))
   // sans "Array.from" ca renverrai une node liste
   focusables = Array.from(modal.querySelectorAll(focusableSelector))
   // on enregistre dans la var ou étais le focus avant de focus la boite modale

@@ -72,7 +72,6 @@
                         </div>
                     </div>
                 </div>
-                 <!--DROPDOWN FIN-->
                 <div id="pictures" class="artist-pictures__main">
                     <!--Photographe's pictures-->
                 </div>    
@@ -103,6 +102,7 @@
                             name="first"
                             minlength="2"
                             required 
+                            aria-labelledby="First name"
                             /><br>
                         </div>
                         <div class="formData">
@@ -113,6 +113,7 @@
                             id="last"
                             name="last"
                             required
+                            aria-labelledby="last name"
                             /><br>
                         </div>
                         <div class="formData">
@@ -122,11 +123,12 @@
                             type="text"
                             id="email"
                             name="email"
+                            aria-labelledby="Email"
                             required 
                             /><br>
                         </div>
                         <div class="formData">
-                            <label for="modal-text">Votre message</label><br>
+                            <label for="modal-text" aria-labelledby="Your message">Votre message</label><br>
                             <textarea form="modal-form" id="modal-text" name="modal-text" rows="5" cols="33"></textarea>
                             <br>
                         </div>

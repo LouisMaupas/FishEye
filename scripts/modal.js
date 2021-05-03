@@ -19,7 +19,6 @@ const openModal = function (e) {
   // par défaut le 1er element focusable est :
   focusables[0].focus()
   modal.removeAttribute('aria-hidden')
-  // variante : target.setAttribute('aria-hidden', false)
   modal.setAttribute('aria-modal', 'true')
   modal.addEventListener('click', closeModal)
   modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
@@ -43,7 +42,6 @@ const closeModal = function (e) {
 
 // empeche la propagation de l'evenement vers les parents
 // donc que le click au milieu de la fenetre modal la ferme
-// on part du principe qu'on aura toujours qu'une div
 // c'est js-modal-stop qui arrete la propagation
 const stopPropagation = function (e) {
   e.stopPropagation()
@@ -57,7 +55,7 @@ const focusInModal = function (e) {
   // trouver l'index de l'element actuellement focus
   let index = focusables.findIndex(f => f === modal.querySelector(':focus'))
   // on reparamètre tabulation
-  // tout d'abord est qu'on appuye sur shit pour aller en sens inverse
+  // tout d'abord lorsqu'on appuye sur shit pour aller en sens inverse
   if (e.shiftKey === true) {
     // on recule d'un cran
     index--
@@ -77,7 +75,7 @@ const focusInModal = function (e) {
   focusables[index].focus()
 }
 
-document.querySelectorAll('.modal-link').forEach(a => { // chaque lien
+document.querySelectorAll('.modal-link').forEach(a => {
   a.addEventListener('click', openModal)
 })
 

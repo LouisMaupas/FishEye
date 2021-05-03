@@ -5,7 +5,7 @@ function photoPagebuilder () {
   const urlSearch = new URLSearchParams(window.location.search)
   const index = parseInt(urlSearch.get('photo'))
   if (isNaN(index) || index < 0 || index > (photographers.length - 1)) {
-    console.log('Ce photpgraphe n\'existe pas')
+    console.log('Ce photographe n\'existe pas')
   } else {
     photographerFromUrl = photographers[index]
     mediasFromUrl = medias[index].map(media => {
@@ -261,9 +261,8 @@ function photoPagebuilder () {
      */
     close (e) {
       e.preventDefault()
-      this.element.classList.add('fadeOut')
       this.element.innerHTML = ''
-      this.element.classList.remove('fadeOut', 'lightbox')
+      this.element.classList.remove('lightbox')
       document.removeEventListener('keyup', this.onKeyUp) // on supprime l'event
     }
 

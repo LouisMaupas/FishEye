@@ -1,3 +1,4 @@
+
 /**
  * Une fonction qui trie l'affichage des photographes sur la page d'accueil selon le filtre (tag) cliqué
  */

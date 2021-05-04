@@ -25,8 +25,8 @@ function renderData () {
         getDatas(data)
         photographer()
         media()
-        homePagebuilder()
-        photoPagebuilder()
+        homePagebuilder(photographers)
+        photoPagebuilder(photographers, medias, url)
       })
     }
   })

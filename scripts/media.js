@@ -8,7 +8,7 @@ function media () {
  * @returns {Array} Des tableaux (un par photographe) contenant des objets (un objet = un media)
  */
   function runAllMedia (id) {
-    let allMedias = datas[0].media.filter(media => media.photographerId === id)
+    const allMedias = datas[0].media.filter(media => media.photographerId === id)
     return medias.push(allMedias)
   }
 

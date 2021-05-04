@@ -42,9 +42,7 @@ function homePagebuilder (photographers) {
       e.preventDefault()
       let tag = tags[i].classList[0]
       tag = tag.toString()
-      console.log(tag)
       for (let i = 0; i < articlePhotographers.length; i++) {
-        console.log(articlePhotographers[i])
         if (articlePhotographers[i].classList.contains(tag)) {
           articlePhotographers[i].classList.remove('display-none')
         } else {
@@ -60,11 +58,11 @@ function homePagebuilder (photographers) {
   const homeUrl = new URLSearchParams(window.location.search)
   const tagFromphotographers = homeUrl.get('tag')
   if (tagFromphotographers) {
-    for (let i = 0; i < photographers.length; i++) {
-      if (photographers[i].classList.contains(tagFromphotographers)) {
-        photographers[i].classList.remove('display-none')
+    for (let i = 0; i < articlePhotographers.length; i++) {
+      if (articlePhotographers[i].classList.contains(tagFromphotographers)) {
+        articlePhotographers[i].classList.remove('display-none')
       } else {
-        photographers[i].classList.add('display-none')
+        articlePhotographers[i].classList.add('display-none')
       }
     }
   }
